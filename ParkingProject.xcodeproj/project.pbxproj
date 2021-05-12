@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38A67D2B264C51F800833F3B /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A67D2A264C51F800833F3B /* SplashScreenViewController.swift */; };
+		38A67D2D264C525900833F3B /* MaGeUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A67D2C264C525900833F3B /* MaGeUserDefaults.swift */; };
+		38A67D2F264C554E00833F3B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A67D2E264C554E00833F3B /* LoginViewController.swift */; };
+		38A67D31264C558800833F3B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A67D30264C558800833F3B /* HomeViewController.swift */; };
 		EB01DE03264B900800232BE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB01DE02264B900800232BE0 /* AppDelegate.swift */; };
 		EB01DE05264B900800232BE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB01DE04264B900800232BE0 /* SceneDelegate.swift */; };
 		EB01DE07264B900800232BE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB01DE06264B900800232BE0 /* ViewController.swift */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38A67D2A264C51F800833F3B /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		38A67D2C264C525900833F3B /* MaGeUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaGeUserDefaults.swift; sourceTree = "<group>"; };
+		38A67D2E264C554E00833F3B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		38A67D30264C558800833F3B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EB01DDFF264B900800232BE0 /* ParkingProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkingProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB01DE02264B900800232BE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB01DE04264B900800232BE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +71,10 @@
 				EB01DE0B264B900C00232BE0 /* Assets.xcassets */,
 				EB01DE0D264B900C00232BE0 /* LaunchScreen.storyboard */,
 				EB01DE10264B900C00232BE0 /* Info.plist */,
+				38A67D2A264C51F800833F3B /* SplashScreenViewController.swift */,
+				38A67D2C264C525900833F3B /* MaGeUserDefaults.swift */,
+				38A67D2E264C554E00833F3B /* LoginViewController.swift */,
+				38A67D30264C558800833F3B /* HomeViewController.swift */,
 			);
 			path = ParkingProject;
 			sourceTree = "<group>";
@@ -137,9 +149,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38A67D2F264C554E00833F3B /* LoginViewController.swift in Sources */,
 				EB01DE07264B900800232BE0 /* ViewController.swift in Sources */,
 				EB01DE03264B900800232BE0 /* AppDelegate.swift in Sources */,
+				38A67D2B264C51F800833F3B /* SplashScreenViewController.swift in Sources */,
 				EB01DE05264B900800232BE0 /* SceneDelegate.swift in Sources */,
+				38A67D31264C558800833F3B /* HomeViewController.swift in Sources */,
+				38A67D2D264C525900833F3B /* MaGeUserDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +312,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = railgun.ParkingProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -315,7 +331,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = railgun.ParkingProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
