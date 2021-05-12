@@ -1,24 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mhg-Yb-wCk">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Login View Controller-->
+        <scene sceneID="O0m-i5-abl">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController storyboardIdentifier="LoginScreen" id="vA3-GJ-a3H" customClass="LoginViewController" customModule="ParkingProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3da-yu-61m">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="qmw-cK-LEB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kEG-SC-L1G"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3G5-IH-0X0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1428.985507246377" y="345.53571428571428"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="2Rv-DA-S31">
+            <objects>
+                <viewController storyboardIdentifier="HomeScreen" id="W1M-BT-Zbg" customClass="HomeViewController" customModule="ParkingProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jqi-uD-cUr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="PPd-6t-5Py"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tcF-Wc-wjb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2379.7101449275365" y="345.53571428571428"/>
+        </scene>
+        <!--Splash Screen View Controller-->
+        <scene sceneID="Qep-Cw-Rx4">
+            <objects>
+                <viewController id="Esz-fD-175" customClass="SplashScreenViewController" customModule="ParkingProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y7O-VV-K2i">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="App_logo" translatesAutoresizingMaskIntoConstraints="NO" id="QCe-AF-LmP">
+                                <rect key="frame" x="87" y="325" width="240" height="251"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="251" id="PMh-gR-d48"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Parking Made Easy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Xr-6E-ADQ">
+                                <rect key="frame" x="20" y="815.5" width="374" height="34"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MaGe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smS-Jd-t8W">
+                                <rect key="frame" x="20" y="756" width="374" height="47"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="T8P-Q6-AeN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3Xr-6E-ADQ" firstAttribute="leading" secondItem="T8P-Q6-AeN" secondAttribute="leading" constant="20" id="0sx-jK-PpW"/>
+                            <constraint firstItem="T8P-Q6-AeN" firstAttribute="trailing" secondItem="smS-Jd-t8W" secondAttribute="trailing" constant="20" id="9op-bY-ehq"/>
+                            <constraint firstItem="QCe-AF-LmP" firstAttribute="leading" secondItem="T8P-Q6-AeN" secondAttribute="leading" constant="87" id="C8R-Oq-3HV"/>
+                            <constraint firstItem="smS-Jd-t8W" firstAttribute="top" secondItem="QCe-AF-LmP" secondAttribute="bottom" constant="180" id="NAG-yF-2LQ"/>
+                            <constraint firstItem="T8P-Q6-AeN" firstAttribute="trailing" secondItem="QCe-AF-LmP" secondAttribute="trailing" constant="87" id="UOp-Ta-ZzJ"/>
+                            <constraint firstItem="3Xr-6E-ADQ" firstAttribute="top" secondItem="smS-Jd-t8W" secondAttribute="bottom" constant="12.5" id="blj-dn-NZN"/>
+                            <constraint firstItem="T8P-Q6-AeN" firstAttribute="trailing" secondItem="3Xr-6E-ADQ" secondAttribute="trailing" constant="20" id="dbH-f5-Bw1"/>
+                            <constraint firstItem="smS-Jd-t8W" firstAttribute="leading" secondItem="T8P-Q6-AeN" secondAttribute="leading" constant="20" id="hUT-IT-w12"/>
+                            <constraint firstItem="QCe-AF-LmP" firstAttribute="top" secondItem="T8P-Q6-AeN" secondAttribute="top" constant="237" id="lKG-CN-dgp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sGa-vC-JD2"/>
+                    <connections>
+                        <segue destination="vA3-GJ-a3H" kind="showDetail" id="KtP-bj-ESG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JIH-4K-8EM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="492.75362318840581" y="345.53571428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hkg-eS-hLS">
+            <objects>
+                <navigationController storyboardIdentifier="SplashScreen" automaticallyAdjustsScrollViewInsets="NO" id="mhg-Yb-wCk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IvB-dH-C2z">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Esz-fD-175" kind="relationship" relationship="rootViewController" id="7KN-L6-asD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PRI-HO-ZlG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-417.39130434782612" y="345.53571428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="App_logo" width="512" height="512"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
