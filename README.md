@@ -8,7 +8,7 @@ User Profile
 -> delete account. 
 
 Add Parking
-The add parking facility should allow the user to create a new parking record with the following
+The add parking facility allows the user to create a new parking record with the following
 information.
 - Building code (exactly 5 alphanumeric characters)
 - No. of hours intended to park (1-hour or less, 4-hour, 12-hour, 24-hour)
@@ -18,10 +18,9 @@ information.
 - date and time of parking (use system date/time)
 
 App allows the user to input the parking location in two ways:
-- enter street name [In this case the app should obtain location coordinates using geocoding]
-- use current location of the device [In this case the app uses reverse geocoding to obtain
-street address]
-After accepting and verifying all information, all parking information must be saved to database. 
+- enter street name 
+- use current location of the device 
+After accepting and verifying all information, all parking information is saved to database. 
 
 View Parking
  -> Details are previous parking are showcased in detail.
