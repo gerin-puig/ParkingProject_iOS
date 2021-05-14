@@ -104,14 +104,90 @@
                     <view key="view" contentMode="scaleToFill" id="Mfo-Tw-MeR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Building Code" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wmN-cM-1c4">
+                                <rect key="frame" x="105" y="206.5" width="204" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hours to Park" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hJv-tR-C73">
+                                <rect key="frame" x="105" y="393.5" width="204" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="License Plate" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R5q-05-rcn">
+                                <rect key="frame" x="105" y="280.5" width="204" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="FOo-Q7-vYT">
+                                <rect key="frame" x="48" y="435.5" width="318" height="31"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of hours intended to park:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFU-Gw-5qe">
+                                <rect key="frame" x="20" y="364.5" width="374" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLEASE ENTER PARKING INFORMATION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Svg-9i-p9R">
+                                <rect key="frame" x="20" y="128" width="374" height="28.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="20"/>
+                                <color key="textColor" systemColor="systemPurpleColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Suit no. of Host" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Ml-MQ-bpz">
+                                <rect key="frame" x="105" y="500.5" width="204" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7wa-ef-azX">
+                                <rect key="frame" x="105" y="569.5" width="204" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" textContentType="street-address"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLN-rh-kna">
+                                <rect key="frame" x="125" y="640" width="164" height="69"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Add Parking"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="MJq-7W-7p0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="Svg-9i-p9R" secondAttribute="trailing" constant="20" id="6rk-OW-rBY"/>
+                            <constraint firstItem="7wa-ef-azX" firstAttribute="top" secondItem="2Ml-MQ-bpz" secondAttribute="bottom" constant="35" id="9Um-2Y-vLo"/>
+                            <constraint firstItem="FOo-Q7-vYT" firstAttribute="top" secondItem="hJv-tR-C73" secondAttribute="bottom" constant="8" id="DpB-De-lBs"/>
+                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="TLN-rh-kna" secondAttribute="trailing" constant="125" id="Erz-Je-pFV"/>
+                            <constraint firstItem="2Ml-MQ-bpz" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="105" id="Gsp-bj-2pz"/>
+                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="R5q-05-rcn" secondAttribute="trailing" constant="105" id="KSh-67-xlv"/>
+                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="wmN-cM-1c4" secondAttribute="trailing" constant="105" id="R6t-3k-eAO"/>
+                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="2Ml-MQ-bpz" secondAttribute="trailing" constant="105" id="S6z-1d-xEj"/>
+                            <constraint firstItem="Svg-9i-p9R" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="W2W-Jl-jl6"/>
+                            <constraint firstItem="TLN-rh-kna" firstAttribute="top" secondItem="7wa-ef-azX" secondAttribute="bottom" constant="35" id="WY7-wR-l2w"/>
+                            <constraint firstItem="OFU-Gw-5qe" firstAttribute="top" secondItem="R5q-05-rcn" secondAttribute="bottom" constant="50" id="Yaj-FU-cgt"/>
+                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="FOo-Q7-vYT" secondAttribute="trailing" constant="50" id="a2f-aF-ZAr"/>
+                            <constraint firstItem="wmN-cM-1c4" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="105" id="aKb-iR-S3t"/>
+                            <constraint firstItem="Svg-9i-p9R" firstAttribute="top" secondItem="MJq-7W-7p0" secondAttribute="top" constant="40" id="aPt-wP-esx"/>
+                            <constraint firstItem="2Ml-MQ-bpz" firstAttribute="top" secondItem="FOo-Q7-vYT" secondAttribute="bottom" constant="35" id="csN-0b-Fhm"/>
+                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="7wa-ef-azX" secondAttribute="trailing" constant="105" id="eti-pj-ucX"/>
+                            <constraint firstItem="hJv-tR-C73" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="105" id="hpt-kg-Afc"/>
+                            <constraint firstItem="TLN-rh-kna" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="125" id="ksb-0P-rf3"/>
+                            <constraint firstItem="7wa-ef-azX" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="105" id="n1w-KX-Bw3"/>
+                            <constraint firstItem="OFU-Gw-5qe" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="nTV-rZ-ibR"/>
+                            <constraint firstItem="wmN-cM-1c4" firstAttribute="top" secondItem="Svg-9i-p9R" secondAttribute="bottom" constant="50" id="ov4-jU-RFc"/>
+                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="hJv-tR-C73" secondAttribute="trailing" constant="105" id="pwr-U5-XMU"/>
+                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="OFU-Gw-5qe" secondAttribute="trailing" constant="20" id="sH0-Ej-dwt"/>
+                            <constraint firstItem="R5q-05-rcn" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="105" id="scL-ew-izf"/>
+                            <constraint firstItem="FOo-Q7-vYT" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="50" id="wXJ-9x-ZVM"/>
+                            <constraint firstItem="R5q-05-rcn" firstAttribute="top" secondItem="wmN-cM-1c4" secondAttribute="bottom" constant="40" id="z8A-2O-xCK"/>
+                            <constraint firstItem="hJv-tR-C73" firstAttribute="top" secondItem="OFU-Gw-5qe" secondAttribute="bottom" constant="2" id="zG0-zS-YQy"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Parking" id="lWX-YC-eYy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wnc-Ib-Clp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4290" y="1071"/>
+            <point key="canvasLocation" x="4288.4057971014499" y="1069.4196428571429"/>
         </scene>
         <!--HOME-->
         <scene sceneID="2Rv-DA-S31">
@@ -347,7 +423,6 @@
         <!--View Controller-->
         <scene sceneID="Wwu-Ci-AY7">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HFM-7T-htC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="q9t-fN-BzP" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mv1-ck-iMg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -432,6 +507,7 @@
                         </constraints>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HFM-7T-htC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1313" y="-431"/>
         </scene>
