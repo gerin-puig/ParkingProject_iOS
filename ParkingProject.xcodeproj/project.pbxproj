@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		382DB0C1264EAD4D00FF5EF9 /* ParkingTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382DB0C0264EAD4D00FF5EF9 /* ParkingTableCell.swift */; };
+		382DB0C3264EADFE00FF5EF9 /* ParkingDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382DB0C2264EADFE00FF5EF9 /* ParkingDetailModel.swift */; };
+		382DB0C5264EF33500FF5EF9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382DB0C4264EF33500FF5EF9 /* ProfileViewController.swift */; };
+		382DB0C7264EF88A00FF5EF9 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382DB0C6264EF88A00FF5EF9 /* EditProfileViewController.swift */; };
 		38A67D2B264C51F800833F3B /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A67D2A264C51F800833F3B /* SplashScreenViewController.swift */; };
 		38A67D2D264C525900833F3B /* MaGeUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A67D2C264C525900833F3B /* MaGeUserDefaults.swift */; };
 		38A67D2F264C554E00833F3B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A67D2E264C554E00833F3B /* LoginViewController.swift */; };
 		38A67D31264C558800833F3B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A67D30264C558800833F3B /* HomeViewController.swift */; };
-		38A67D39264D80E000833F3B /* parkingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A67D38264D80E000833F3B /* parkingViewCell.swift */; };
 		EB01DE03264B900800232BE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB01DE02264B900800232BE0 /* AppDelegate.swift */; };
 		EB01DE05264B900800232BE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB01DE04264B900800232BE0 /* SceneDelegate.swift */; };
 		EB01DE07264B900800232BE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB01DE06264B900800232BE0 /* ViewController.swift */; };
@@ -21,11 +24,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		382DB0C0264EAD4D00FF5EF9 /* ParkingTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingTableCell.swift; sourceTree = "<group>"; };
+		382DB0C2264EADFE00FF5EF9 /* ParkingDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDetailModel.swift; sourceTree = "<group>"; };
+		382DB0C4264EF33500FF5EF9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		382DB0C6264EF88A00FF5EF9 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		38A67D2A264C51F800833F3B /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		38A67D2C264C525900833F3B /* MaGeUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaGeUserDefaults.swift; sourceTree = "<group>"; };
 		38A67D2E264C554E00833F3B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		38A67D30264C558800833F3B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		38A67D38264D80E000833F3B /* parkingViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parkingViewCell.swift; sourceTree = "<group>"; };
 		EB01DDFF264B900800232BE0 /* ParkingProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkingProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB01DE02264B900800232BE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB01DE04264B900800232BE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,7 +59,9 @@
 				38A67D2A264C51F800833F3B /* SplashScreenViewController.swift */,
 				38A67D2E264C554E00833F3B /* LoginViewController.swift */,
 				38A67D30264C558800833F3B /* HomeViewController.swift */,
-				38A67D38264D80E000833F3B /* parkingViewCell.swift */,
+				382DB0C4264EF33500FF5EF9 /* ProfileViewController.swift */,
+				382DB0C0264EAD4D00FF5EF9 /* ParkingTableCell.swift */,
+				382DB0C6264EF88A00FF5EF9 /* EditProfileViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -62,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				38A67D2C264C525900833F3B /* MaGeUserDefaults.swift */,
+				382DB0C2264EADFE00FF5EF9 /* ParkingDetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,12 +177,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38A67D39264D80E000833F3B /* parkingViewCell.swift in Sources */,
+				382DB0C7264EF88A00FF5EF9 /* EditProfileViewController.swift in Sources */,
 				38A67D2F264C554E00833F3B /* LoginViewController.swift in Sources */,
 				EB01DE07264B900800232BE0 /* ViewController.swift in Sources */,
+				382DB0C5264EF33500FF5EF9 /* ProfileViewController.swift in Sources */,
 				EB01DE03264B900800232BE0 /* AppDelegate.swift in Sources */,
 				38A67D2B264C51F800833F3B /* SplashScreenViewController.swift in Sources */,
 				EB01DE05264B900800232BE0 /* SceneDelegate.swift in Sources */,
+				382DB0C1264EAD4D00FF5EF9 /* ParkingTableCell.swift in Sources */,
+				382DB0C3264EADFE00FF5EF9 /* ParkingDetailModel.swift in Sources */,
 				38A67D31264C558800833F3B /* HomeViewController.swift in Sources */,
 				38A67D2D264C525900833F3B /* MaGeUserDefaults.swift in Sources */,
 			);
