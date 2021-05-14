@@ -13,6 +13,7 @@ class HomeViewController:  UIViewController {
     var parkingList : [parking] = []
     
     @IBOutlet weak var parkingTableView: UITableView!
+
     
     
     override func viewDidLoad() {
