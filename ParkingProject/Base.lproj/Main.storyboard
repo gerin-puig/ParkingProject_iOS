@@ -126,7 +126,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="90" id="VYK-bZ-S6a">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="parkingCell" rowHeight="90" id="VYK-bZ-S6a" customClass="ParkingTableCell" customModule="ParkingProject" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.5" width="374" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VYK-bZ-S6a" id="0Ry-7z-jDx">
@@ -149,6 +149,10 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="parkingDetailLabel" destination="leN-VO-E0Y" id="Cia-f4-4Sf"/>
+                                            <outlet property="parkingHeaderLabel" destination="SLM-cH-q1x" id="0bx-uF-IHI"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -347,7 +351,6 @@
         <!--View Controller-->
         <scene sceneID="Wwu-Ci-AY7">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HFM-7T-htC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="q9t-fN-BzP" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mv1-ck-iMg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -432,6 +435,7 @@
                         </constraints>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HFM-7T-htC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1313" y="-431"/>
         </scene>
