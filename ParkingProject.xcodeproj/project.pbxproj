@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,8 @@
 		382DB0C5264EF33500FF5EF9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382DB0C4264EF33500FF5EF9 /* ProfileViewController.swift */; };
 		382DB0C7264EF88A00FF5EF9 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382DB0C6264EF88A00FF5EF9 /* EditProfileViewController.swift */; };
 		382DB0CD2650067E00FF5EF9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 382DB0CC2650067E00FF5EF9 /* GoogleService-Info.plist */; };
+		382DB0CF265164B000FF5EF9 /* FIrebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382DB0CE265164B000FF5EF9 /* FIrebaseController.swift */; };
+		382DB0D1265165DC00FF5EF9 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382DB0D0265165DC00FF5EF9 /* ProfileModel.swift */; };
 		38A67D2B264C51F800833F3B /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A67D2A264C51F800833F3B /* SplashScreenViewController.swift */; };
 		38A67D2D264C525900833F3B /* MaGeUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A67D2C264C525900833F3B /* MaGeUserDefaults.swift */; };
 		38A67D2F264C554E00833F3B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A67D2E264C554E00833F3B /* LoginViewController.swift */; };
@@ -32,6 +34,8 @@
 		382DB0C4264EF33500FF5EF9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		382DB0C6264EF88A00FF5EF9 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		382DB0CC2650067E00FF5EF9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		382DB0CE265164B000FF5EF9 /* FIrebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIrebaseController.swift; sourceTree = "<group>"; };
+		382DB0D0265165DC00FF5EF9 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		38A67D2A264C51F800833F3B /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		38A67D2C264C525900833F3B /* MaGeUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaGeUserDefaults.swift; sourceTree = "<group>"; };
 		38A67D2E264C554E00833F3B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +82,7 @@
 			children = (
 				38A67D2C264C525900833F3B /* MaGeUserDefaults.swift */,
 				382DB0C2264EADFE00FF5EF9 /* ParkingDetailModel.swift */,
+				382DB0D0265165DC00FF5EF9 /* ProfileModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -88,7 +93,6 @@
 				F6205B2295D0583F9246CE4C /* Pods-ParkingProject.debug.xcconfig */,
 				329DE2BE871D28CF404568C4 /* Pods-ParkingProject.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -123,6 +127,7 @@
 				EB01DE0D264B900C00232BE0 /* LaunchScreen.storyboard */,
 				382DB0CC2650067E00FF5EF9 /* GoogleService-Info.plist */,
 				EB01DE10264B900C00232BE0 /* Info.plist */,
+				382DB0CE265164B000FF5EF9 /* FIrebaseController.swift */,
 			);
 			path = ParkingProject;
 			sourceTree = "<group>";
@@ -250,10 +255,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				382DB0D1265165DC00FF5EF9 /* ProfileModel.swift in Sources */,
 				382DB0C7264EF88A00FF5EF9 /* EditProfileViewController.swift in Sources */,
 				38A67D2F264C554E00833F3B /* LoginViewController.swift in Sources */,
 				EB01DE07264B900800232BE0 /* ViewController.swift in Sources */,
 				382DB0C5264EF33500FF5EF9 /* ProfileViewController.swift in Sources */,
+				382DB0CF265164B000FF5EF9 /* FIrebaseController.swift in Sources */,
 				EB01DE03264B900800232BE0 /* AppDelegate.swift in Sources */,
 				38A67D2B264C51F800833F3B /* SplashScreenViewController.swift in Sources */,
 				EB01DE05264B900800232BE0 /* SceneDelegate.swift in Sources */,
