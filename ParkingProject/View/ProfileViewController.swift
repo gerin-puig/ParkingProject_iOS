@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class ProfileViewController: UIViewController {
 
@@ -15,10 +16,12 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var plateLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
+    let firebaseController = FirebaseController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       let x =  firebaseController.getUserProfile(userId: "0")
+        print(x)
         // Do any additional setup after loading the view.
     }
     

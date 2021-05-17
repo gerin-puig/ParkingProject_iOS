@@ -10,29 +10,34 @@ import SwiftUI
 
 
 class HomeViewController:  UIViewController {
-    var parkingList : [parking] = []
+    var parkingList : [Parking] = []
     
     @IBOutlet weak var parkingTableView: UITableView!
 
+    let firebaseDb = FirebaseController()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        createParkingArray()
+//        createParkingArray()
         self.parkingTableView.delegate = self
         self.parkingTableView.dataSource = self
         self.parkingTableView.rowHeight = 90
         
     }
     
-    func createParkingArray() -> [parking]{
-        let parking1 = parking(headerLabel: "Test Parking 1", detailLabel: "Test Parking Detail 1")
-        let parking2 = parking(headerLabel: "Test Parking 2", detailLabel: "Test Parking Detail 2")
-        
-        parkingList.append(parking1)
-        parkingList.append(parking2)
-        return parkingList
+    override func viewDidAppear(_ animated: Bool) {
+        self.parkingList = firebaseDb.getUserParkingList(userId: "0")
     }
+    
+//    func createParkingArray() -> [Parking]{
+//        let parking1 = parking(headerLabel: "Test Parking 1", detailLabel: "Test Parking Detail 1")
+//        let parking2 = parking(headerLabel: "Test Parking 2", detailLabel: "Test Parking Detail 2")
+//
+//        parkingList.append(parking1)
+//        parkingList.append(parking2)
+//        return parkingList
+//    }
 }
 
 
@@ -53,6 +58,7 @@ extension HomeViewController : UITableViewDataSource,UITableViewDelegate{
         }
         
         cell?.setParkingCell(parkingListArray: parkingValue)
+        
         
         return cell!
     }
