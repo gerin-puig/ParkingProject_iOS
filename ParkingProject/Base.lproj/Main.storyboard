@@ -11,7 +11,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="KF9-6T-oay">
             <objects>
-                <tabBarController id="meX-CI-Q0k" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" id="meX-CI-Q0k" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Ng1-x6-MF2"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ht4-ki-m8C">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -26,7 +26,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p5O-BK-w1X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2388" y="346"/>
+            <point key="canvasLocation" x="2328" y="346"/>
         </scene>
         <!--Home-->
         <scene sceneID="pFM-Dt-gWW">
@@ -100,7 +100,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plate Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXe-s5-xwU">
                                 <rect key="frame" x="20" y="527" width="374" height="29"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
-                                <color key="textColor" red="0.37030574679374695" green="0.09051213413476944" blue="0.5754886269569397" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.367033422" green="0.12404779339999999" blue="0.55687403680000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpq-ki-dHh">
@@ -327,7 +327,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S1C-vD-fXU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4971.0144927536239" y="345.53571428571428"/>
+            <point key="canvasLocation" x="5174" y="346"/>
         </scene>
         <!--New-->
         <scene sceneID="1I1-TJ-UoE">
@@ -360,7 +360,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hours to Park" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hJv-tR-C73">
-                                <rect key="frame" x="105" y="393.5" width="204" height="34"/>
+                                <rect key="frame" x="105" y="396.5" width="204" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
@@ -370,27 +370,27 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="FOo-Q7-vYT">
-                                <rect key="frame" x="48" y="435.5" width="318" height="31"/>
+                                <rect key="frame" x="48" y="438.5" width="318" height="31"/>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of hours intended to park:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFU-Gw-5qe">
-                                <rect key="frame" x="20" y="364.5" width="374" height="27"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="20" y="364.5" width="374" height="30"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="21"/>
+                                <color key="textColor" red="0.367033422" green="0.12404779339999999" blue="0.55687403680000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLEASE ENTER PARKING INFORMATION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Svg-9i-p9R">
                                 <rect key="frame" x="20" y="128" width="374" height="28.5"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="20"/>
-                                <color key="textColor" systemColor="systemPurpleColor"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                <color key="textColor" red="0.367033422" green="0.12404779339999999" blue="0.55687403680000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Suit no. of Host" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Ml-MQ-bpz">
-                                <rect key="frame" x="105" y="500.5" width="204" height="34"/>
+                                <rect key="frame" x="105" y="503.5" width="204" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7wa-ef-azX">
-                                <rect key="frame" x="105" y="569.5" width="204" height="35"/>
+                                <rect key="frame" x="105" y="572.5" width="204" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" textContentType="street-address"/>
                             </textField>
@@ -562,12 +562,12 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter UserName" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ctE-jn-Uw2">
                                 <rect key="frame" x="20" y="240" width="374" height="38"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f39-zj-UDx">
-                                <rect key="frame" x="20" y="336.5" width="374" height="38"/>
+                                <rect key="frame" x="20" y="336.5" width="374" height="37"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MaGe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPD-aj-srQ">
                                 <rect key="frame" x="20" y="98" width="374" height="58.5"/>
@@ -588,11 +588,12 @@
                                     <color key="titleColor" systemColor="systemYellowColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="q9t-fN-BzP" kind="show" id="lYM-Zb-V66"/>
+                                    <action selector="btnSignUpPressed:" destination="hsP-Im-lAx" eventType="touchUpInside" id="3MC-XH-Seg"/>
+                                    <segue destination="q9t-fN-BzP" kind="show" identifier="" id="MBk-dd-BzC"/>
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BI1-MT-mSM">
-                                <rect key="frame" x="335" y="389.5" width="51" height="31"/>
+                                <rect key="frame" x="335" y="388.5" width="51" height="31"/>
                                 <color key="onTintColor" systemColor="systemYellowColor"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hkx-y0-Lb7">
@@ -614,7 +615,7 @@
                                     <color key="titleColor" systemColor="systemYellowColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="meX-CI-Q0k" kind="show" id="ua9-o3-wKo"/>
+                                    <action selector="btnLoginPressed:" destination="hsP-Im-lAx" eventType="touchUpInside" id="L8w-FR-bbH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -652,6 +653,8 @@
                     <navigationItem key="navigationItem" id="iay-nV-xPs"/>
                     <connections>
                         <outlet property="isRememberMe" destination="BI1-MT-mSM" id="96y-4g-WQT"/>
+                        <outlet property="txtPassword" destination="f39-zj-UDx" id="ENh-Zt-ALi"/>
+                        <outlet property="txtUsername" destination="ctE-jn-Uw2" id="eQH-rh-14t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NxF-F4-cWU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -676,10 +679,10 @@
             </objects>
             <point key="canvasLocation" x="-417.39130434782612" y="345.53571428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="Wwu-Ci-AY7">
             <objects>
-                <viewController id="q9t-fN-BzP" sceneMemberID="viewController">
+                <viewController id="q9t-fN-BzP" customClass="SignUpViewController" customModule="ParkingProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mv1-ck-iMg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

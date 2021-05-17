@@ -8,4 +8,5 @@ target 'ParkingProject' do
   # Pods for ParkingProject
  pod 'Firebase/Firestore'
  pod 'FirebaseFirestoreSwift', '~> 7.0-beta'
+ pod 'Firebase/Auth'
 end
