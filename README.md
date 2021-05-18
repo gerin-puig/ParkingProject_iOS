@@ -30,8 +30,6 @@ View Parking
  <img width="726" alt="Screen Shot 2021-05-16 at 10 20 49 AM" src="https://user-images.githubusercontent.com/78885735/118697930-d4285300-b7dd-11eb-88da-c02332531b4d.png">
 
 Splash Screen
-
-
 <img width="359" alt="Screen Shot 2021-05-18 at 1 50 38 PM" src="https://user-images.githubusercontent.com/69816174/118700265-7b0dee80-b7e0-11eb-8ed8-8a3cfd244124.png">
 
 Login
@@ -53,5 +51,9 @@ Add New Parking
 <img width="332" alt="Screen Shot 2021-05-18 at 1 51 51 PM" src="https://user-images.githubusercontent.com/69816174/118700679-eeaffb80-b7e0-11eb-9ee9-5429f04a1dca.png">
 
 
+
+Work Division Sheet
 [MaGe Parking App (export).xls](https://github.com/gerin-puig/ParkingProject/files/6503329/MaGe.Parking.App.export.xls)
+
+
 
