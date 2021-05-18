@@ -30,6 +30,8 @@ View Parking
  <img width="726" alt="Screen Shot 2021-05-16 at 10 20 49 AM" src="https://user-images.githubusercontent.com/78885735/118697930-d4285300-b7dd-11eb-88da-c02332531b4d.png">
 
 Splash Screen
+
+
 <img width="359" alt="Screen Shot 2021-05-18 at 1 50 38 PM" src="https://user-images.githubusercontent.com/69816174/118700265-7b0dee80-b7e0-11eb-8ed8-8a3cfd244124.png">
 
 Login
