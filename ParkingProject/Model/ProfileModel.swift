@@ -13,7 +13,7 @@ struct Profile : Codable{
     var user_id : String
     var first_name : String
     var last_name : String
-    var email : String
+    var email_id : String
     var phone_number : String
     var plate_number : String
     
