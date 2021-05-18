@@ -24,3 +24,8 @@ After accepting and verifying all information, all parking information is saved 
 
 View Parking
  -> Details are previous parking are showcased in detail.
+ 
+ 
+ Entity Diagram
+ <img width="726" alt="Screen Shot 2021-05-16 at 10 20 49 AM" src="https://user-images.githubusercontent.com/78885735/118697930-d4285300-b7dd-11eb-88da-c02332531b4d.png">
+
