@@ -725,6 +725,9 @@
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" systemColor="systemYellowColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnSignUpPressed:" destination="q9t-fN-BzP" eventType="touchUpInside" id="DXx-fA-83G"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cu-xy-2fn">
                                 <rect key="frame" x="20" y="197" width="374" height="28.5"/>
@@ -816,6 +819,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DVy-Ia-eP2"/>
+                    <connections>
+                        <outlet property="txtEmail" destination="GWH-Or-jNn" id="egd-rP-E3D"/>
+                        <outlet property="txtFirstName" destination="IK2-8V-RAS" id="gHU-oB-OES"/>
+                        <outlet property="txtLastName" destination="sr6-Kx-0Sa" id="crI-TQ-RT3"/>
+                        <outlet property="txtPNum" destination="KvA-UH-AXq" id="Ou6-t5-krO"/>
+                        <outlet property="txtPassword" destination="IcO-LH-Xe9" id="4JZ-5p-E5t"/>
+                        <outlet property="txtPlateNum" destination="fpz-jD-6hO" id="xU5-pd-eRA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HFM-7T-htC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
