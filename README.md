@@ -49,3 +49,7 @@ Edit Profile
 
 Add New Parking
 <img width="332" alt="Screen Shot 2021-05-18 at 1 51 51 PM" src="https://user-images.githubusercontent.com/69816174/118700679-eeaffb80-b7e0-11eb-9ee9-5429f04a1dca.png">
+
+
+[MaGe Parking App (export).xls](https://github.com/gerin-puig/ParkingProject/files/6503329/MaGe.Parking.App.export.xls)
+
