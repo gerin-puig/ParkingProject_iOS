@@ -7,19 +7,31 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseAuth
 
 class FirebaseController{
     
     private let firebaseDb = Firestore.firestore()
-    
+    private var userId : String?
+
+    func getInstance() -> Firestore{
+    return firebaseDb
+    }
     //user login functions
+    func getUserIdFromFirebaseAuth(){
+        guard let user_id = Auth.auth().currentUser?.uid else{
+            return
+        }
+        self.userId = user_id
+    }
+    
     
     //user profile functions
     func signUpUserProfile(profile : Profile){
      
     }
     
-    func getUserProfile(userId : String) {
+    func getUserProfile(userId : String) -> Profile? {
         var profileData : Profile?
         
         firebaseDb.collectionGroup("profile").whereField("user_id", isEqualTo: userId).getDocuments { queryResult, error in
@@ -32,7 +44,6 @@ class FirebaseController{
                     for result in queryResult!.documents{
                         do{
                             profileData = try result.data(as : Profile.self)
-                            print(profileData!)
                         }catch{
                             print(#function,"Error while reading data :  \(error)")
                         }
@@ -40,6 +51,7 @@ class FirebaseController{
                 }
             }
         }
+        return profileData
     }
     
     func saveUserProfile(profile : Profile){
@@ -60,27 +72,8 @@ class FirebaseController{
              print(error)
         }
     }
+    
+    
     //parking car functions
-    func getUserParkingList(userId : String) -> [Parking]{
-        var parkingList : [Parking] = []
-        firebaseDb.collectionGroup("parking").whereField("user_id", isEqualTo: userId).getDocuments { queryResult, error in
-            if let err = error{
-                print(#function, "Error Occured \(err)")
-            }else{
-                if queryResult!.documents.count == 0{
-                    print(#function, "No results found")
-                }else{
-                    for result in queryResult!.documents{
-                        do{
-                            let parkingData = try result.data(as : Parking.self)
-                            parkingList.append(parkingData!)
-                        }catch{
-                            print(#function,"Error while reading data :  \(error)")
-                        }
-                    }
-                }
-            }
-        }
-        return parkingList
-    }
+
 }
