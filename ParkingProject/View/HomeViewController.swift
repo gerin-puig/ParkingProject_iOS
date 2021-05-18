@@ -6,38 +6,59 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
 
 
 
 class HomeViewController:  UIViewController {
-    var parkingList : [parking] = []
+  
+    var parkingList : [Parking] = []
+    
     
     @IBOutlet weak var parkingTableView: UITableView!
-
+    let firebaseDb = FirebaseController()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        createParkingArray()
         self.parkingTableView.delegate = self
         self.parkingTableView.dataSource = self
         self.parkingTableView.rowHeight = 90
         
     }
     
-    func createParkingArray() -> [parking]{
-        let parking1 = parking(headerLabel: "Test Parking 1", detailLabel: "Test Parking Detail 1")
-        let parking2 = parking(headerLabel: "Test Parking 2", detailLabel: "Test Parking Detail 2")
-        
-        parkingList.append(parking1)
-        parkingList.append(parking2)
-        return parkingList
+    func getParkingListData(user_id : String){
+        firebaseDb.getInstance().collectionGroup("parking").whereField("user_id", isEqualTo: user_id).getDocuments { queryResult, error in
+            if let err = error{
+                print(#function, "Error Occured \(err)")
+            }else{
+                if queryResult!.documents.count == 0{
+                    print(#function, "No results found")
+                }else{
+                    for result in queryResult!.documents{
+                        do{
+                            let parkingData = try result.data(as : Parking.self)
+                            self.parkingList.append(parkingData!)
+                        }catch{
+                            print(#function,"Error while reading data :  \(error)")
+                        }
+                    }
+                    self.parkingTableView.reloadData()
+                }
+            }
+        }
     }
+    override func viewDidAppear(_ animated: Bool) {
+        getParkingListData(user_id: "0")
+
+    }
+    
 }
 
 
 extension HomeViewController : UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
         return parkingList.count
     }
     
@@ -51,8 +72,9 @@ extension HomeViewController : UITableViewDataSource,UITableViewDelegate{
         style: UITableViewCell.CellStyle.default,
         reuseIdentifier: "parkingCell")
         }
-        
+
         cell?.setParkingCell(parkingListArray: parkingValue)
+        
         
         return cell!
     }

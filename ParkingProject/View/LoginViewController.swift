@@ -44,8 +44,8 @@ class LoginViewController: UIViewController {
             
             MaGeUserDefaults().userLogIn(username: email, password: password, isLoggedIn: strongSelf.isRememberMe.isOn)
             
-            let parkingList = strongSelf.storyboard?.instantiateViewController(identifier: "TabBarController") as? UITabBarController
-            strongSelf.show(parkingList!, sender: self)
+            let parkingListScreen = strongSelf.storyboard?.instantiateViewController(identifier: "TabBarController") as? UITabBarController
+            strongSelf.show(parkingListScreen!, sender: self)
             
         })
     }

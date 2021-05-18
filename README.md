@@ -24,3 +24,44 @@ After accepting and verifying all information, all parking information is saved 
 
 View Parking
  -> Details are previous parking are showcased in detail.
+ 
+ 
+Entity Diagram
+
+<img width="726" alt="Screen Shot 2021-05-16 at 10 20 49 AM" src="https://user-images.githubusercontent.com/78885735/118697930-d4285300-b7dd-11eb-88da-c02332531b4d.png">
+
+Splash Screen
+
+<img width="359" alt="Screen Shot 2021-05-18 at 1 50 38 PM" src="https://user-images.githubusercontent.com/69816174/118700265-7b0dee80-b7e0-11eb-8ed8-8a3cfd244124.png">
+
+Login
+
+<img width="349" alt="Screen Shot 2021-05-18 at 1 50 49 PM" src="https://user-images.githubusercontent.com/69816174/118700418-a7296f80-b7e0-11eb-9888-f86fc6007aa3.png">
+
+Sign Up
+
+<img width="341" alt="Screen Shot 2021-05-18 at 1 50 59 PM" src="https://user-images.githubusercontent.com/69816174/118700469-b4def500-b7e0-11eb-951d-1ccc0b5330cf.png">
+
+Parking List
+
+<img width="344" alt="Screen Shot 2021-05-18 at 1 51 17 PM" src="https://user-images.githubusercontent.com/69816174/118700572-d213c380-b7e0-11eb-8577-3f314311937a.png">
+
+User Profile
+
+<img width="350" alt="Screen Shot 2021-05-18 at 1 51 29 PM" src="https://user-images.githubusercontent.com/69816174/118700625-ddff8580-b7e0-11eb-8777-f28a5e78e953.png">
+
+Edit Profile
+
+<img width="337" alt="Screen Shot 2021-05-18 at 1 51 42 PM" src="https://user-images.githubusercontent.com/69816174/118700650-e6f05700-b7e0-11eb-9f44-d687b43d41a9.png">
+
+Add New Parking
+
+<img width="332" alt="Screen Shot 2021-05-18 at 1 51 51 PM" src="https://user-images.githubusercontent.com/69816174/118700679-eeaffb80-b7e0-11eb-9ee9-5429f04a1dca.png">
+
+
+
+Work Division Sheet
+[MaGe Parking App (export).xls](https://github.com/gerin-puig/ParkingProject/files/6503329/MaGe.Parking.App.export.xls)
+
+
+

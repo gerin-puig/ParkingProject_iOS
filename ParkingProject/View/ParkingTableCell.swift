@@ -12,9 +12,9 @@ class ParkingTableCell: UITableViewCell {
     @IBOutlet weak var parkingHeaderLabel: UILabel!
     @IBOutlet weak var parkingDetailLabel: UILabel!
 
-    func setParkingCell(parkingListArray : parking){
-        parkingHeaderLabel.text = parkingListArray.headerLabel
-        parkingDetailLabel.text = parkingListArray.detailLabel
+    func setParkingCell(parkingListArray : Parking){
+        parkingHeaderLabel.text = parkingListArray.plate_number
+        parkingDetailLabel.text =  parkingListArray.apt_number + parkingListArray.street_address
     }
 
 }
