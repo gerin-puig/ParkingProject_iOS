@@ -9,13 +9,25 @@ import Foundation
 import FirebaseFirestore
 import FirebaseAuth
 
-class FirebaseController{
+class FirebaseController : ObservableObject{
     
     private let firebaseDb = Firestore.firestore()
-    private var userId : String?
     
-    func getInstance() -> Firestore{
-        return firebaseDb
+    @Published private var userId : String?
+    @Published var profileData : Profile?
+    @Published var parkingDataList : [Parking] = []
+    
+    var list : [Parking] = []
+    
+    private static var sharedInstance : FirebaseController?
+    
+    static func getInstance() -> FirebaseController{
+        if sharedInstance != nil{
+            return sharedInstance!
+        }else{
+            sharedInstance = FirebaseController()
+            return sharedInstance!
+        }
     }
     
     //user login functions
@@ -68,9 +80,7 @@ class FirebaseController{
         }
     }
     
-    func getUserProfile(userId : String) -> Profile? {
-        var profileData : Profile?
-        
+    func getUserProfile(userId : String){
         firebaseDb.collectionGroup("profile").whereField("user_id", isEqualTo: userId).getDocuments { queryResult, error in
             if let err = error{
                 print(#function, "Error Occured \(err)")
@@ -80,7 +90,7 @@ class FirebaseController{
                 }else{
                     for result in queryResult!.documents{
                         do{
-                            profileData = try result.data(as : Profile.self)
+                            self.profileData = try result.data(as : Profile.self)
                         }catch{
                             print(#function,"Error while reading data :  \(error)")
                         }
@@ -88,13 +98,11 @@ class FirebaseController{
                 }
             }
         }
-        return profileData
     }
     
     func saveUserProfile(profile : Profile){
         do{
             try firebaseDb.collection("profile").addDocument(from: profile)
-            
         }
         catch{
             print(#function,error)
@@ -114,5 +122,25 @@ class FirebaseController{
     
     
     //parking car functions
+    func getParkingListData(user_id : String){
+        firebaseDb.collectionGroup("parking").whereField("user_id", isEqualTo: user_id).getDocuments { queryResult, error in
+            if let err = error{
+                print(#function, "Error Occured \(err)")
+            }else{
+                if queryResult!.documents.count == 0{
+                    print(#function, "No results found")
+                }else{
+                    for result in queryResult!.documents{
+                        do{
+                            let parkingData = try result.data(as : Parking.self)
+                            self.parkingDataList.append(parkingData!)
+                        }catch{
+                            print(#function,"Error while reading data :  \(error)")
+                        }
+                    }
+                }
+            }
+        }
+    }
     
 }
