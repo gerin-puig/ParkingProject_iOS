@@ -5,7 +5,7 @@
 	};
 	objectVersion = 51;
 	objects = {
-  
+
 /* Begin PBXBuildFile section */
 		382DB0C1264EAD4D00FF5EF9 /* ParkingTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382DB0C0264EAD4D00FF5EF9 /* ParkingTableCell.swift */; };
 		382DB0C3264EADFE00FF5EF9 /* ParkingDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382DB0C2264EADFE00FF5EF9 /* ParkingDetailModel.swift */; };
@@ -28,7 +28,7 @@
 		EB01DE0F264B900C00232BE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB01DE0D264B900C00232BE0 /* LaunchScreen.storyboard */; };
 		EB01DE3F26520FE000232BE0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB01DE3E26520FE000232BE0 /* SignUpViewController.swift */; };
 		EB01DE6F2653701700232BE0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB01DE6E2653701700232BE0 /* User.swift */; };
-		EB01DE71265376C400232BE0 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB01DE70265376C400232BE0 /* Profile.swift */; };
+		EB01DE7626558F6500232BE0 /* AddNewParkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB01DE7526558F6500232BE0 /* AddNewParkingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +57,7 @@
 		EB01DE3E26520FE000232BE0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		EB01DE6E2653701700232BE0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EB01DE70265376C400232BE0 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		EB01DE7526558F6500232BE0 /* AddNewParkingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewParkingViewController.swift; sourceTree = "<group>"; };
 		F6205B2295D0583F9246CE4C /* Pods-ParkingProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkingProject.debug.xcconfig"; path = "Target Support Files/Pods-ParkingProject/Pods-ParkingProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +84,7 @@
 				382DB0C6264EF88A00FF5EF9 /* EditProfileViewController.swift */,
 				EB01DE3E26520FE000232BE0 /* SignUpViewController.swift */,
 				38E5C031265571CF00759AF5 /* ParkingDetailsViewController.swift */,
+				EB01DE7526558F6500232BE0 /* AddNewParkingViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -95,7 +97,7 @@
 				EB01DE6E2653701700232BE0 /* User.swift */,
 				EB01DE70265376C400232BE0 /* Profile.swift */,
 				382DB0D0265165DC00FF5EF9 /* ProfileModel.swift */,
-				382DB0D22652ABDC00FF5EF9 /* ParkingModel.swift */
+				382DB0D22652ABDC00FF5EF9 /* ParkingModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -130,6 +132,7 @@
 		EB01DE01264B900800232BE0 /* ParkingProject */ = {
 			isa = PBXGroup;
 			children = (
+				EB01DE78265591B100232BE0 /* Controller */,
 				38A67D33264D7E6A00833F3B /* Model */,
 				38A67D32264D7E6300833F3B /* View */,
 				EB01DE02264B900800232BE0 /* AppDelegate.swift */,
@@ -139,9 +142,16 @@
 				EB01DE0D264B900C00232BE0 /* LaunchScreen.storyboard */,
 				382DB0CC2650067E00FF5EF9 /* GoogleService-Info.plist */,
 				EB01DE10264B900C00232BE0 /* Info.plist */,
-				382DB0CE265164B000FF5EF9 /* FIrebaseController.swift */,
 			);
 			path = ParkingProject;
+			sourceTree = "<group>";
+		};
+		EB01DE78265591B100232BE0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				382DB0CE265164B000FF5EF9 /* FIrebaseController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		F05C1B7A5533E39A8124AB5C /* Frameworks */ = {
@@ -275,6 +285,7 @@
 				382DB0CF265164B000FF5EF9 /* FIrebaseController.swift in Sources */,
 				38E5C032265571CF00759AF5 /* ParkingDetailsViewController.swift in Sources */,
 				EB01DE03264B900800232BE0 /* AppDelegate.swift in Sources */,
+				EB01DE7626558F6500232BE0 /* AddNewParkingViewController.swift in Sources */,
 				382DB0D32652ABDC00FF5EF9 /* ParkingModel.swift in Sources */,
 				38A67D2B264C51F800833F3B /* SplashScreenViewController.swift in Sources */,
 				EB01DE3F26520FE000232BE0 /* SignUpViewController.swift in Sources */,

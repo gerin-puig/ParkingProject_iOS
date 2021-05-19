@@ -67,12 +67,14 @@ extension HomeViewController : UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         guard let parkingDetailsVC = storyboard?.instantiateViewController(identifier: "ParkingDetailScreen") as? ParkingDetailsViewController else{
             return
         }
         
         parkingDetailsVC.parkingDetail = parkingList[indexPath.row]
             print(parkingList[indexPath.row])
+        
         show(parkingDetailsVC, sender: (Any).self)
     }
     

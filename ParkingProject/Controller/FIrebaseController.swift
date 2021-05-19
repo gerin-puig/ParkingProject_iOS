@@ -118,7 +118,14 @@ class FirebaseController : ObservableObject{
         }
     }
     
-    
+    func addParkingToUser(parking:Parking){
+        do {
+            try firebaseDb.collection("parking").document(getUserIdFromFirebaseAuth()).setData(from: parking)
+            print(#function,"Parking added")
+        } catch {
+            print(error)
+        }
+    }
     
     
     //parking car functions
