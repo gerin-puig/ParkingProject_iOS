@@ -36,7 +36,6 @@ class HomeViewController:  UIViewController {
             .sink{(listOfParking) in
             print(#function, "Data updates recieved")
                 self.parkingList.removeAll()
-                print(#function, listOfParking)
                 self.parkingList.append(contentsOf: listOfParking)
                 self.parkingTableView.reloadData()
         }
@@ -71,6 +70,9 @@ extension HomeViewController : UITableViewDataSource,UITableViewDelegate{
         guard let parkingDetailsVC = storyboard?.instantiateViewController(identifier: "ParkingDetailScreen") as? ParkingDetailsViewController else{
             return
         }
+        
+        parkingDetailsVC.parkingDetail = parkingList[indexPath.row]
+            print(parkingList[indexPath.row])
         show(parkingDetailsVC, sender: (Any).self)
     }
     

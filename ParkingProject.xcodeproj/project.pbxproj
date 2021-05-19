@@ -23,7 +23,6 @@
 		690A28D0B4DB23D050B3AC0A /* Pods_ParkingProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B34103A967A6DC6B67136 /* Pods_ParkingProject.framework */; };
 		EB01DE03264B900800232BE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB01DE02264B900800232BE0 /* AppDelegate.swift */; };
 		EB01DE05264B900800232BE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB01DE04264B900800232BE0 /* SceneDelegate.swift */; };
-		EB01DE07264B900800232BE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB01DE06264B900800232BE0 /* ViewController.swift */; };
 		EB01DE0A264B900800232BE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB01DE08264B900800232BE0 /* Main.storyboard */; };
 		EB01DE0C264B900C00232BE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB01DE0B264B900C00232BE0 /* Assets.xcassets */; };
 		EB01DE0F264B900C00232BE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB01DE0D264B900C00232BE0 /* LaunchScreen.storyboard */; };
@@ -49,7 +48,6 @@
 		EB01DDFF264B900800232BE0 /* ParkingProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkingProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB01DE02264B900800232BE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB01DE04264B900800232BE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EB01DE06264B900800232BE0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EB01DE09264B900800232BE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EB01DE0B264B900C00232BE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB01DE0E264B900C00232BE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -130,7 +128,6 @@
 				38A67D32264D7E6300833F3B /* View */,
 				EB01DE02264B900800232BE0 /* AppDelegate.swift */,
 				EB01DE04264B900800232BE0 /* SceneDelegate.swift */,
-				EB01DE06264B900800232BE0 /* ViewController.swift */,
 				EB01DE08264B900800232BE0 /* Main.storyboard */,
 				EB01DE0B264B900C00232BE0 /* Assets.xcassets */,
 				EB01DE0D264B900C00232BE0 /* LaunchScreen.storyboard */,
@@ -267,7 +264,6 @@
 				382DB0D1265165DC00FF5EF9 /* ProfileModel.swift in Sources */,
 				382DB0C7264EF88A00FF5EF9 /* EditProfileViewController.swift in Sources */,
 				38A67D2F264C554E00833F3B /* LoginViewController.swift in Sources */,
-				EB01DE07264B900800232BE0 /* ViewController.swift in Sources */,
 				382DB0C5264EF33500FF5EF9 /* ProfileViewController.swift in Sources */,
 				382DB0CF265164B000FF5EF9 /* FIrebaseController.swift in Sources */,
 				38E5C032265571CF00759AF5 /* ParkingDetailsViewController.swift in Sources */,
