@@ -9,7 +9,8 @@ import Foundation
 import FirebaseFirestoreSwift
 
 struct User:Codable {
-    @DocumentID var id:String?
+    //@DocumentID
+    var user_id:String
     var email:String
     var password:String
 }

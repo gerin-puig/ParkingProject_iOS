@@ -8,12 +8,12 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-struct Profile:Codable {
-    var id:String
-    var email:String
-    var password:String
-    var firstName:String
-    var lastName:String
-    var phoneNum:String
-    var plateNum:String
-}
+//struct Profile:Codable {
+//    var id:String
+//    var email:String
+//    var password:String
+//    var firstName:String
+//    var lastName:String
+//    var phoneNum:String
+//    var plateNum:String
+//}
