@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         //print(firebaseController.getUserIdFromFirebaseAuth())
         if newUser == true{
-            print("this is a new user")
+            print("creating new user")
             
             userData?.user_id = firebaseController.getUserIdFromFirebaseAuth()
             userProfile?.user_id = firebaseController.getUserIdFromFirebaseAuth()

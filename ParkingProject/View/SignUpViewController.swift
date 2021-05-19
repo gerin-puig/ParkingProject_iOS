@@ -10,7 +10,7 @@ import FirebaseFirestore
 import FirebaseAuth
 
 class SignUpViewController: UIViewController {
-
+    
     @IBOutlet weak var txtFirstName: UITextField!
     @IBOutlet weak var txtLastName: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
@@ -18,40 +18,43 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var txtPNum: UITextField!
     @IBOutlet weak var txtPlateNum: UITextField!
     
+    var isCreated:Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
     @IBAction func btnSignUpPressed(_ sender: UIButton) {
-        if let email = txtEmail.text, let pass = txtPassword.text, let firstname = txtFirstName.text, let lastname = txtLastName.text, let phone = txtPNum.text, let plate = txtPlateNum.text{
-            
+        if let email = txtEmail.text, let pass = txtPassword.text
+        {
             if !email.isEmpty && !pass.isEmpty
             {
                 FirebaseController().signUpUser(email: email, pass: pass)
+                isCreated = true
+                showAlert(title: "Sign Up", msg: "Account Created!")
             }
-            
-            showAlert(title: "Sign Up", msg: "Account Created!")
         }
-        
-        
     }
     
     @IBAction func btnReturnPressed(_ sender: Any) {
+        let LoginScreen = self.storyboard?.instantiateViewController(identifier: "LoginScreen") as? LoginViewController
         
-        if let email = txtEmail.text, let pass = txtPassword.text, let firstname = txtFirstName.text, let lastname = txtLastName.text, let phone = txtPNum.text, let plate = txtPlateNum.text{
-            
-            let newUser = User.init(user_id: "", email: email, password: pass)
-            let newProfile = Profile(user_id: "", first_name: firstname, last_name: lastname, email_id: email, phone_number: phone, plate_number: plate)
-           
-            let LoginScreen = self.storyboard?.instantiateViewController(identifier: "LoginScreen") as? LoginViewController
-            
-            LoginScreen?.newUser = true
-            LoginScreen?.userData = newUser
-            LoginScreen?.userProfile = newProfile
-            
-            self.show(LoginScreen!, sender: self)
+        if isCreated{
+            if let email = txtEmail.text, let pass = txtPassword.text, let firstname = txtFirstName.text, let lastname = txtLastName.text, let phone = txtPNum.text, let plate = txtPlateNum.text{
+                
+                let newUser = User.init(user_id: "", email: email, password: pass)
+                let newProfile = Profile(user_id: "", first_name: firstname, last_name: lastname, email_id: email, phone_number: phone, plate_number: plate)
+                
+                LoginScreen?.newUser = true
+                LoginScreen?.userData = newUser
+                LoginScreen?.userProfile = newProfile
+                
+            }
         }
+        
+        self.show(LoginScreen!, sender: self)
+        
     }
     
     
