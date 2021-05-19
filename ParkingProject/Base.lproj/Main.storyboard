@@ -494,6 +494,21 @@
             </objects>
             <point key="canvasLocation" x="4288.4057971014499" y="-346.20535714285711"/>
         </scene>
+        <!--ParkingDetailScreen-->
+        <scene sceneID="Nql-FT-yoY">
+            <objects>
+                <viewController storyboardIdentifier="ParkingDetailScreen" title="ParkingDetailScreen" id="lzn-UH-kRM" customClass="ParkingDetailsViewController" customModule="ParkingProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bTF-81-HgT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="q5V-RK-ICQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f7h-sY-dPm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5174" y="-346"/>
+        </scene>
         <!--Splash Screen View Controller-->
         <scene sceneID="Qep-Cw-Rx4">
             <objects>
