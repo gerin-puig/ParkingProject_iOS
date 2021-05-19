@@ -33,31 +33,32 @@ Entity Diagram
 
 Splash Screen
 
-<img width="359" alt="Screen Shot 2021-05-18 at 1 50 38 PM" src="https://user-images.githubusercontent.com/69816174/118700265-7b0dee80-b7e0-11eb-8ed8-8a3cfd244124.png">
+![Simulator Screen Shot - iPhone 11 Pro - 2021-05-18 at 19 54 31](https://user-images.githubusercontent.com/69816174/118737655-4ff0c280-b813-11eb-8334-c0846e07444e.png)
+
 
 Login
+![Simulator Screen Shot - iPhone 11 Pro - 2021-05-18 at 19 54 51](https://user-images.githubusercontent.com/69816174/118737683-63039280-b813-11eb-85b4-8992ef30836e.png)
 
-<img width="349" alt="Screen Shot 2021-05-18 at 1 50 49 PM" src="https://user-images.githubusercontent.com/69816174/118700418-a7296f80-b7e0-11eb-9888-f86fc6007aa3.png">
 
 Sign Up
+![Simulator Screen Shot - iPhone 11 Pro - 2021-05-18 at 19 56 39](https://user-images.githubusercontent.com/69816174/118737721-76166280-b813-11eb-88ba-6e9987089aba.png)
 
-<img width="341" alt="Screen Shot 2021-05-18 at 1 50 59 PM" src="https://user-images.githubusercontent.com/69816174/118700469-b4def500-b7e0-11eb-951d-1ccc0b5330cf.png">
 
 Parking List
+![Simulator Screen Shot - iPhone 11 Pro - 2021-05-18 at 19 55 07](https://user-images.githubusercontent.com/69816174/118737748-81698e00-b813-11eb-983e-a50c0e8e1415.png)
 
-<img width="344" alt="Screen Shot 2021-05-18 at 1 51 17 PM" src="https://user-images.githubusercontent.com/69816174/118700572-d213c380-b7e0-11eb-8577-3f314311937a.png">
 
 User Profile
+![Simulator Screen Shot - iPhone 11 Pro - 2021-05-18 at 19 55 39](https://user-images.githubusercontent.com/69816174/118737769-8b8b8c80-b813-11eb-9f65-213c68d70094.png)
 
-<img width="350" alt="Screen Shot 2021-05-18 at 1 51 29 PM" src="https://user-images.githubusercontent.com/69816174/118700625-ddff8580-b7e0-11eb-8777-f28a5e78e953.png">
 
 Edit Profile
+![Simulator Screen Shot - iPhone 11 Pro - 2021-05-18 at 19 56 00](https://user-images.githubusercontent.com/69816174/118737816-a3631080-b813-11eb-9889-aeccc2adb3f8.png)
 
-<img width="337" alt="Screen Shot 2021-05-18 at 1 51 42 PM" src="https://user-images.githubusercontent.com/69816174/118700650-e6f05700-b7e0-11eb-9f44-d687b43d41a9.png">
 
 Add New Parking
+![Simulator Screen Shot - iPhone 11 Pro - 2021-05-18 at 19 55 35](https://user-images.githubusercontent.com/69816174/118737792-99411200-b813-11eb-98ea-3aa1c9b2ea2b.png)
 
-<img width="332" alt="Screen Shot 2021-05-18 at 1 51 51 PM" src="https://user-images.githubusercontent.com/69816174/118700679-eeaffb80-b7e0-11eb-9ee9-5429f04a1dca.png">
 
 
 
