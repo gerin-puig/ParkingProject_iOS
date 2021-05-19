@@ -14,7 +14,7 @@ class ParkingTableCell: UITableViewCell {
 
     func setParkingCell(parkingListArray : Parking){
         parkingHeaderLabel.text = parkingListArray.plate_number
-        parkingDetailLabel.text =  parkingListArray.apt_number + parkingListArray.street_address
+        parkingDetailLabel.text =  parkingListArray.apt_number + ", " +  parkingListArray.street_address
     }
 
 }

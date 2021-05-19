@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseFirestore
+import Combine
 
 class ProfileViewController: UIViewController {
 
@@ -17,52 +18,34 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var plateLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
+    private var cancellables : Set<AnyCancellable> = []
+    
     let firebaseController = FirebaseController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        firebaseController.getUserProfile(userId: "0")
+//        setProfileData()
+        recieveChanges()
+  
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-      setProfileData()
-    }
-    func setProfileData() {
-        firebaseController.getInstance().collectionGroup("profile").whereField("user_id", isEqualTo: "0").getDocuments { queryResult, error in
-            if let err = error{
-                print(#function, "Error Occured \(err)")
-            }else{
-                if queryResult!.documents.count == 0{
-                    print(#function, "No results found")
-                }else{
-                    for result in queryResult!.documents{
-                        do{
-                            self.profileData = try result.data(as : Profile.self)
-                            print(#function,self.profileData!)
-                            self.emailLabel.text = self.profileData?.email_id
-                            self.firstNameLabel.text = self.profileData?.first_name
-                            self.lastNameLabel.text = self.profileData?.last_name
-                            self.plateLabel.text = self.profileData?.plate_number
-                            self.phoneNumberLabel.text = self.profileData?.phone_number
-                          
-                        }catch{
-                            print(#function,"Error while reading data :  \(error)")
-                        }
-                    }
-                }
-            }
+    private func recieveChanges(){
+        self.firebaseController.$profileData
+            .receive(on: RunLoop.main)
+            .sink{(listofLaunches) in
+            print(#function, "Data updates recieved")
+                self.profileData = listofLaunches
+                self.emailLabel.text = self.profileData?.email_id
+                self.firstNameLabel.text = self.profileData?.first_name
+                self.lastNameLabel.text = self.profileData?.last_name
+                self.plateLabel.text = self.profileData?.plate_number
+                self.phoneNumberLabel.text = self.profileData?.phone_number
+              
         }
+            .store(in: &cancellables)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }
