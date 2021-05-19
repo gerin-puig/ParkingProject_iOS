@@ -13,22 +13,59 @@ class FirebaseController{
     
     private let firebaseDb = Firestore.firestore()
     private var userId : String?
-
+    
     func getInstance() -> Firestore{
-    return firebaseDb
+        return firebaseDb
     }
+    
     //user login functions
-    func getUserIdFromFirebaseAuth(){
+    func getUserIdFromFirebaseAuth() -> String {
         guard let user_id = Auth.auth().currentUser?.uid else{
-            return
+            return "not found"
         }
         self.userId = user_id
+        
+        return self.userId!
     }
     
+    func signInUser(email:String, password:String, isRememberMe:Bool, myView:UIViewController){
+        
+        Auth.auth().signIn(withEmail: email, password: password, completion: {[weak self] result, error in
+            guard let strongSelf = self else { return }
+            
+            guard error == nil else{
+                myView.showAlert(title: "Invalid", msg: "Account Not Found!")
+                return
+            }
+            //print(strongSelf.getUserIdFromFirebaseAuth())
+            MaGeUserDefaults().userLogIn(username: email, password: password, isLoggedIn: isRememberMe)
+            
+            let parkingListScreen = myView.storyboard?.instantiateViewController(identifier: "TabBarController") as? UITabBarController
+            
+            myView.show(parkingListScreen!, sender: myView)
+            
+        })
+        
+    }
     
     //user profile functions
-    func signUpUserProfile(profile : Profile){
-     
+    func signUpUser(email:String,pass:String){
+        Auth.auth().createUser(withEmail: email, password: pass, completion: {result, error in
+            guard error == nil else{
+                return
+            }
+        })
+        
+    }
+    
+    func createProfile(user:User,profile:Profile){
+        do{
+            try firebaseDb.collection("user").addDocument(from: user)
+            try firebaseDb.collection("profile").addDocument(from: profile)
+            
+        }catch{
+            print(error)
+        }
     }
     
     func getUserProfile(userId : String) -> Profile? {
@@ -69,11 +106,13 @@ class FirebaseController{
             try firebaseDb.collection("profile").document(user_id).setData(from: profile)
             print(#function,"Task updated")
         } catch {
-             print(error)
+            print(error)
         }
     }
     
     
+    
+    
     //parking car functions
-
+    
 }

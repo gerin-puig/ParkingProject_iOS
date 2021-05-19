@@ -9,18 +9,37 @@ import SwiftUI
 import FirebaseAuth
 
 class LoginViewController: UIViewController {
-      
+    
     @IBOutlet weak var isRememberMe: UISwitch!
     @IBOutlet weak var txtUsername: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     
+    let firebaseController = FirebaseController()
+    
+    var newUser:Bool?
+    var userData:User?
+    var userProfile:Profile?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         self.navigationController?.navigationBar.isHidden = true
+        
         // Do any additional setup after loading the view.
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //print(firebaseController.getUserIdFromFirebaseAuth())
+        if newUser == true{
+            print("this is a new user")
+            
+            userData?.user_id = firebaseController.getUserIdFromFirebaseAuth()
+            userProfile?.user_id = firebaseController.getUserIdFromFirebaseAuth()
+            
+            firebaseController.createProfile(user: userData!, profile: userProfile!)
+        }
+    }
+    
     @IBAction func btnLoginPressed(_ sender: UIButton) {
         guard let email = txtUsername.text
         else
@@ -32,22 +51,8 @@ class LoginViewController: UIViewController {
             showAlert(title: "Password Field", msg: "Password field is Empty!")
             return }
         
-        //will move just testing
-        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password, completion: {[weak self] result, error in
-            guard let strongSelf = self else {
-                return
-            }
-            guard error == nil else{
-                strongSelf.showAlert(title: "Invalid", msg: "Account not found!")
-                return
-            }
-            
-            MaGeUserDefaults().userLogIn(username: email, password: password, isLoggedIn: strongSelf.isRememberMe.isOn)
-            
-            let parkingListScreen = strongSelf.storyboard?.instantiateViewController(identifier: "TabBarController") as? UITabBarController
-            strongSelf.show(parkingListScreen!, sender: self)
-            
-        })
+        //signs user in
+        firebaseController.signInUser(email: email, password: password, isRememberMe: isRememberMe.isOn, myView: self)
     }
     
     @IBAction func btnSignUpPressed(_ sender: Any) {
