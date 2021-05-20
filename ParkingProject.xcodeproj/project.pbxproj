@@ -29,6 +29,7 @@
 		EB01DE3F26520FE000232BE0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB01DE3E26520FE000232BE0 /* SignUpViewController.swift */; };
 		EB01DE6F2653701700232BE0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB01DE6E2653701700232BE0 /* User.swift */; };
 		EB01DE7626558F6500232BE0 /* AddNewParkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB01DE7526558F6500232BE0 /* AddNewParkingViewController.swift */; };
+		EB01DE7A2656285700232BE0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB01DE792656285700232BE0 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		EB01DE6E2653701700232BE0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EB01DE70265376C400232BE0 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		EB01DE7526558F6500232BE0 /* AddNewParkingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewParkingViewController.swift; sourceTree = "<group>"; };
+		EB01DE792656285700232BE0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F6205B2295D0583F9246CE4C /* Pods-ParkingProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkingProject.debug.xcconfig"; path = "Target Support Files/Pods-ParkingProject/Pods-ParkingProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				382DB0CE265164B000FF5EF9 /* FIrebaseController.swift */,
+				EB01DE792656285700232BE0 /* MapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				38A67D2B264C51F800833F3B /* SplashScreenViewController.swift in Sources */,
 				EB01DE3F26520FE000232BE0 /* SignUpViewController.swift in Sources */,
 				EB01DE05264B900800232BE0 /* SceneDelegate.swift in Sources */,
+				EB01DE7A2656285700232BE0 /* MapViewController.swift in Sources */,
 				382DB0C1264EAD4D00FF5EF9 /* ParkingTableCell.swift in Sources */,
 				382DB0C3264EADFE00FF5EF9 /* ParkingDetailModel.swift in Sources */,
 				38A67D31264C558800833F3B /* HomeViewController.swift in Sources */,

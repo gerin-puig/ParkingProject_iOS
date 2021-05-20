@@ -51,7 +51,21 @@ class LoginViewController: UIViewController {
             return }
         
         //signs user in
-        firebaseController.signInUser(email: email, password: password, isRememberMe: isRememberMe.isOn, myView: self)
+        //firebaseController.signInUser(email: email, password: password, isRememberMe: isRememberMe.isOn, myView: self)
+        firebaseController.signInUser(email: email, password: password) {
+            [weak self] success in
+            guard let ss = self else {return}
+            
+            if success{
+                let parkingListScreen = ss.storyboard?.instantiateViewController(identifier: "TabBarController") as? UITabBarController
+                
+                ss.show(parkingListScreen!, sender: ss)
+            }
+            else
+            {
+                ss.showAlert(title: "Invalid", msg: "Account Not Found!")
+            }
+        }
     }
     
     @IBAction func btnSignUpPressed(_ sender: Any) {
