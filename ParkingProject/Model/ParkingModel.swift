@@ -11,7 +11,8 @@ struct Parking : Codable{
     //var apt_number : String
     var building_code : String
     var date : String
-    var geo_location : String
+    var geo_location_lat : String
+    var geo_location_long : String
     var plate_number : String
     var number_of_hours : String
     var street_address : String
