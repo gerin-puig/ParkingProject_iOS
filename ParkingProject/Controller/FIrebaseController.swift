@@ -40,24 +40,16 @@ class FirebaseController : ObservableObject{
         return self.userId!
     }
     
-    func signInUser(email:String, password:String, isRememberMe:Bool, myView:UIViewController){
-        
+    func signInUser(email:String, password:String, completionBlock: @escaping (_ success:Bool) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password, completion: {[weak self] result, error in
             guard let strongSelf = self else { return }
-            
-            guard error == nil else{
-                myView.showAlert(title: "Invalid", msg: "Account Not Found!")
-                return
+            if let user = result?.user {
+                //print(user)
+                completionBlock(true)
+            } else {
+                completionBlock(false)
             }
-            //print(strongSelf.getUserIdFromFirebaseAuth())
-            MaGeUserDefaults().userLogIn(username: email, password: password, isLoggedIn: isRememberMe)
-            
-            let parkingListScreen = myView.storyboard?.instantiateViewController(identifier: "TabBarController") as? UITabBarController
-            
-            myView.show(parkingListScreen!, sender: myView)
-            
         })
-        
     }
     
     //user profile functions
@@ -120,7 +112,8 @@ class FirebaseController : ObservableObject{
     
     func addParkingToUser(parking:Parking){
         do {
-            try firebaseDb.collection("parking").document(getUserIdFromFirebaseAuth()).setData(from: parking)
+            //try firebaseDb.collection("parking").document(getUserIdFromFirebaseAuth()).setData(from: parking)
+            try firebaseDb.collection("parking").addDocument(from: parking)
             print(#function,"Parking added")
         } catch {
             print(error)

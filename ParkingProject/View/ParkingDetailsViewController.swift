@@ -23,7 +23,7 @@ class ParkingDetailsViewController: UIViewController {
         buildingCodeLabel.text = parkingDetail?.building_code
         licensePlateLabel.text = parkingDetail?.plate_number
         numberOfHoursLabel.text = parkingDetail?.number_of_hours
-        parkingAddressLabel.text = parkingDetail!.apt_number + ", " + parkingDetail!.street_address
+        parkingAddressLabel.text = /*parkingDetail!.apt_number + ", " + */parkingDetail!.street_address
     }
     
 }
