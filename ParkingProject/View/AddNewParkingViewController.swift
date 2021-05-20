@@ -78,8 +78,7 @@ class AddNewParkingViewController: UIViewController {
                     guard let ss = self else {return}
                     
                     //print(userCoords)
-                    let loc = "\(userCoords.0),\(userCoords.1)"
-                    let parkingInfo = Parking(building_code: buildingCode, date: date, geo_location: loc, plate_number: plateNum, number_of_hours: numOfHours, street_address: address, user_id: ss.fb.getUserIdFromFirebaseAuth())
+                    let parkingInfo = Parking(building_code: buildingCode, date: date, geo_location_lat: userCoords.0, geo_location_long: userCoords.1, plate_number: plateNum, number_of_hours: numOfHours, street_address: address, user_id: ss.fb.getUserIdFromFirebaseAuth())
                     
                     ss.fb.addParkingToUser(parking: parkingInfo)
                     

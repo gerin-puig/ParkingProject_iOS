@@ -16,27 +16,11 @@ class LoginViewController: UIViewController {
     
     let firebaseController = FirebaseController()
     
-    var newUser:Bool?
-    var userData:User?
-    var userProfile:Profile?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.isHidden = true
         // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        //print(firebaseController.getUserIdFromFirebaseAuth())
-        if newUser == true{
-            print("creating new user")
-            
-            userData?.user_id = firebaseController.getUserIdFromFirebaseAuth()
-            userProfile?.user_id = firebaseController.getUserIdFromFirebaseAuth()
-            
-            firebaseController.createProfile(user: userData!, profile: userProfile!)
-        }
     }
     
     @IBAction func btnLoginPressed(_ sender: UIButton) {
