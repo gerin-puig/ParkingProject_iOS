@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     
     let firebaseController = FirebaseController()
     
+    let mageUserDefaults = MaGeUserDefaults()
     var newUser:Bool?
     var userData:User?
     var userProfile:Profile?
@@ -60,6 +61,7 @@ class LoginViewController: UIViewController {
                 let parkingListScreen = ss.storyboard?.instantiateViewController(identifier: "TabBarController") as? UITabBarController
                 
                 ss.show(parkingListScreen!, sender: ss)
+                self!.mageUserDefaults.userLogIn(username: email, password: password, isLoggedIn: self!.isRememberMe.isOn)
             }
             else
             {

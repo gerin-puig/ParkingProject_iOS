@@ -17,6 +17,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var plateLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
+    private let mageUserDefaults = MaGeUserDefaults()
     
     private var cancellables : Set<AnyCancellable> = []
     
@@ -40,6 +41,10 @@ class ProfileViewController: UIViewController {
     
     @objc func logOutUser(){
         print(#function, "log out pressed")
+//        mageUserDefaults.userLogOut()
+   
+//        self.tabBarController?.view.removeFromSuperview()
+
     }
     
     private func recieveChanges(){

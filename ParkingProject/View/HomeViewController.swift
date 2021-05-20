@@ -17,13 +17,14 @@ class HomeViewController:  UIViewController {
     let firebaseDb = FirebaseController.getInstance()
     private var cancellables : Set<AnyCancellable> = []
 
+    private let userDefaults = MaGeUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.isHidden = false
 
-        self.firebaseDb.getParkingListData(user_id: "0")
+        self.firebaseDb.getParkingListData(user_id: userDefaults.getUserId())
         self.recieveParkingListChanges()
         
         self.parkingTableView.delegate = self

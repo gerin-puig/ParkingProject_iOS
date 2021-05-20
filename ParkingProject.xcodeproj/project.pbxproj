@@ -94,7 +94,6 @@
 		38A67D33264D7E6A00833F3B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				38A67D2C264C525900833F3B /* MaGeUserDefaults.swift */,
 				382DB0C2264EADFE00FF5EF9 /* ParkingDetailModel.swift */,
 				EB01DE6E2653701700232BE0 /* User.swift */,
 				EB01DE70265376C400232BE0 /* Profile.swift */,
@@ -151,8 +150,9 @@
 		EB01DE78265591B100232BE0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				382DB0CE265164B000FF5EF9 /* FIrebaseController.swift */,
 				EB01DE792656285700232BE0 /* MapViewController.swift */,
+				38A67D2C264C525900833F3B /* MaGeUserDefaults.swift */,
+				382DB0CE265164B000FF5EF9 /* FIrebaseController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

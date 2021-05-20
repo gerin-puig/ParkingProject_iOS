@@ -12,6 +12,17 @@ class MaGeUserDefaults{
     private let keyUsername = "Username"
     private let keyPassword = "Password"
     private let keyRememberMe = "RememberMe"
+    private let keyUserId = "UserId"
+    
+    
+    func getUserId() -> String{
+        return mageDefaults.string(forKey: self.keyUserId)!
+    }
+    
+    func setUserId(userId : String){
+        mageDefaults.setValue(userId, forKey: keyUserId)
+    }
+    
     
     func userLogIn(username : String, password : String, isLoggedIn : Bool){
         mageDefaults.setValue(username, forKey: keyUsername)
@@ -32,6 +43,8 @@ class MaGeUserDefaults{
     func doRememberMe() -> Bool{
         return mageDefaults.bool(forKey: keyRememberMe)
     }
+    
+    
     
 
 }
