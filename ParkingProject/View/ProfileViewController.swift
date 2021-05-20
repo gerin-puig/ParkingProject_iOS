@@ -24,11 +24,22 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Navigation bar button setup
+        let logOutButton = UIBarButtonItem(image: UIImage(named: ""), style: .plain, target: self, action: #selector(self.logOutUser))
+        logOutButton.title = "Log Out >"
+        logOutButton.tintColor = .systemYellow
+        self.navigationItem.rightBarButtonItem  = logOutButton
+        
+      }
+    
+    override func viewDidAppear(_ animated: Bool) {
         firebaseController.getUserProfile(userId: "0")
-//        setProfileData()
         recieveChanges()
-  
-        // Do any additional setup after loading the view.
+    }
+    
+    @objc func logOutUser(){
+        print(#function, "log out pressed")
     }
     
     private func recieveChanges(){
@@ -48,4 +59,13 @@ class ProfileViewController: UIViewController {
     }
     
 
+    @IBAction func onEditButtonPressed(_ sender: Any) {
+        guard let editProfileVC = storyboard?.instantiateViewController(identifier: "EditProfileScreen") as? EditProfileViewController else{
+            return
+        }
+        
+        editProfileVC.profileData = self.profileData
+
+        show(editProfileVC, sender: (Any).self)
+    }
 }

@@ -21,6 +21,8 @@ class HomeViewController:  UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.isHidden = false
+
         self.firebaseDb.getParkingListData(user_id: "0")
         self.recieveParkingListChanges()
         
