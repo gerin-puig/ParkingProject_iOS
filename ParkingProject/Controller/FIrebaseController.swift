@@ -40,11 +40,12 @@ class FirebaseController : ObservableObject{
         return self.userId!
     }
     
-    func signInUser(email:String, password:String, isRememberMe:Bool, myView:UIViewController){
+    func signInUser(email:String, password:String, isRememberMe:Bool, myView:UIViewController) {
         
         Auth.auth().signIn(withEmail: email, password: password, completion: {[weak self] result, error in
             guard let strongSelf = self else { return }
             
+            print(#function, result)
             guard error == nil else{
                 myView.showAlert(title: "Invalid", msg: "Account Not Found!")
                 return
@@ -100,19 +101,20 @@ class FirebaseController : ObservableObject{
         }
     }
     
-    func saveUserProfile(profile : Profile){
-        do{
-            try firebaseDb.collection("profile").addDocument(from: profile)
-        }
-        catch{
-            print(#function,error)
-        }
-    }
+//    func saveUserProfile(profile : Profile){
+//        do{
+//            try firebaseDb.collection("profile").addDocument(from: profile)
+//        }
+//        catch{
+//            print(#function,error)
+//        }
+//    }
     
-    func updateUserProfile(profile : Profile, user_id : String){
+    func updateUserProfile(profile : Profile, doc_id : String){
         do {
-            try firebaseDb.collection("profile").document(user_id).setData(from: profile)
+            try firebaseDb.collection("profile").document(doc_id).setData(from: profile)
             print(#function,"Task updated")
+                
         } catch {
             print(error)
         }
