@@ -91,7 +91,8 @@ class AddNewParkingViewController: UIViewController {
                     
                     //print(userCoords)
                     let loc = "\(userCoords.0),\(userCoords.1)"
-                    let parkingInfo = Parking(building_code: buildingCode, date: date, geo_location: loc, plate_number: plateNum, number_of_hours: numOfHours, street_address: address, user_id: self!.mageUserDefaults.getUserId())
+                  
+                    let parkingInfo = Parking(building_code: buildingCode, date: date, geo_location_lat: userCoords.0, geo_location_long: userCoords.1, plate_number: plateNum, number_of_hours: numOfHours, street_address: address, user_id: ss.fb.getUserIdFromFirebaseAuth())
                     
                     ss.firebaseControllerDb.addParkingToUser(parking: parkingInfo)
                     
