@@ -21,9 +21,10 @@ class SplashScreenViewController: UIViewController {
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
                 if(self.userDefaults.doRememberMe()){
-                    guard let homeScreenVc = self.storyboard?.instantiateViewController(identifier: "HomeScreen") as? HomeViewController else{
+                    guard let homeScreenVc = self.storyboard?.instantiateViewController(identifier:"TabBarController") as? UITabBarController else{
                         return
                     }
+               
                     self.show(homeScreenVc, sender: (Any).self)
 
                 }else{

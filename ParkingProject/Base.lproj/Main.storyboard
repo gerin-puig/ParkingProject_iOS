@@ -366,48 +366,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Building Code" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wmN-cM-1c4">
-                                <rect key="frame" x="20" y="185.5" width="374" height="38"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hours to Park" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hJv-tR-C73">
-                                <rect key="frame" x="20" y="316" width="374" height="38"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                <connections>
-                                    <action selector="NumHoursValueChanged:" destination="I58-No-fkX" eventType="editingDidEnd" id="oxw-Yu-Lat"/>
-                                    <action selector="txtValueChanged:" destination="I58-No-fkX" eventType="valueChanged" id="gDt-0k-FRy"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="License Plate" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R5q-05-rcn">
-                                <rect key="frame" x="20" y="232" width="374" height="38"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="FOo-Q7-vYT">
-                                <rect key="frame" x="18" y="361.5" width="378" height="31"/>
-                                <connections>
-                                    <action selector="sliderValueChanged:" destination="I58-No-fkX" eventType="valueChanged" id="UXZ-o3-br1"/>
-                                </connections>
-                            </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of hours intended to park:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFU-Gw-5qe">
-                                <rect key="frame" x="20" y="278.5" width="374" height="30"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="21"/>
-                                <color key="textColor" red="0.367033422" green="0.12404779339999999" blue="0.55687403680000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLEASE ENTER PARKING INFORMATION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Svg-9i-p9R">
-                                <rect key="frame" x="20" y="150" width="374" height="28.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Parking Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Svg-9i-p9R">
+                                <rect key="frame" x="20" y="142.5" width="374" height="29"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
                                 <color key="textColor" red="0.367033422" green="0.12404779339999999" blue="0.55687403680000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Suit no. of Host" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Ml-MQ-bpz">
-                                <rect key="frame" x="20" y="400" width="374" height="38"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MaGe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5u-Ec-51z">
                                 <rect key="frame" x="20" y="88" width="374" height="54.5"/>
                                 <color key="tintColor" systemColor="systemPurpleColor"/>
@@ -415,23 +379,55 @@
                                 <color key="textColor" systemColor="systemYellowColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Building Code" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wmN-cM-1c4">
+                                <rect key="frame" x="20" y="232" width="374" height="38"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hours to Park" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hJv-tR-C73">
+                                <rect key="frame" x="20" y="509" width="374" height="38"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suite/Apt Number : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVb-e1-4n6">
+                                <rect key="frame" x="20" y="285" width="374" height="29"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                <color key="textColor" red="0.3703057468" green="0.090512134130000005" blue="0.57548862700000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="License Plate" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R5q-05-rcn">
+                                <rect key="frame" x="20" y="416" width="374" height="38"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of hours intended to park:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFU-Gw-5qe">
+                                <rect key="frame" x="20" y="469" width="374" height="30"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="21"/>
+                                <color key="textColor" red="0.367033422" green="0.12404779339999999" blue="0.55687403680000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Suit no. of Host" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Ml-MQ-bpz">
+                                <rect key="frame" x="20" y="324" width="374" height="38"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7wa-ef-azX">
-                                <rect key="frame" x="20" y="506" width="374" height="38"/>
+                                <rect key="frame" x="20" y="632" width="374" height="38"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" textContentType="street-address"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Country" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iP9-hs-mYX">
-                                <rect key="frame" x="20" y="596" width="374" height="38"/>
+                                <rect key="frame" x="20" y="718" width="374" height="38"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" textContentType="street-address"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iWe-8Q-uIe">
-                                <rect key="frame" x="20" y="551" width="374" height="38"/>
+                                <rect key="frame" x="20" y="675" width="374" height="38"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" textContentType="street-address"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FAC-5r-3ga">
-                                <rect key="frame" x="110" y="468" width="194" height="32"/>
+                                <rect key="frame" x="20" y="591" width="374" height="32"/>
                                 <segments>
                                     <segment title="Manual"/>
                                     <segment title="Automatic"/>
@@ -440,10 +436,30 @@
                                     <action selector="segLocationValChanged:" destination="I58-No-fkX" eventType="valueChanged" id="HFt-hX-rv9"/>
                                 </connections>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLN-rh-kna">
-                                <rect key="frame" x="120" y="654" width="174" height="59"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Building Code : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJT-Cv-TwL">
+                                <rect key="frame" x="20" y="193" width="374" height="29"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
-                                <state key="normal" title="Add Parking"/>
+                                <color key="textColor" red="0.3703057468" green="0.090512134130000005" blue="0.57548862700000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="License Plate :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="art-Ip-NDG">
+                                <rect key="frame" x="20" y="377" width="374" height="29"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                <color key="textColor" red="0.3703057468" green="0.090512134130000005" blue="0.57548862700000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reP-R0-TZR">
+                                <rect key="frame" x="20" y="562" width="374" height="29"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                <color key="textColor" red="0.3703057468" green="0.090512134130000005" blue="0.57548862700000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLN-rh-kna">
+                                <rect key="frame" x="20" y="772" width="374" height="41"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                <state key="normal" title="Add Parking">
+                                    <color key="titleColor" systemColor="systemYellowColor"/>
+                                </state>
                                 <connections>
                                     <action selector="btnAddParkingPressed:" destination="I58-No-fkX" eventType="touchUpInside" id="A4V-WX-WMh"/>
                                 </connections>
@@ -452,55 +468,66 @@
                         <viewLayoutGuide key="safeArea" id="MJq-7W-7p0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="OFU-Gw-5qe" firstAttribute="top" secondItem="R5q-05-rcn" secondAttribute="bottom" constant="8.5" id="0W2-WC-3y9"/>
-                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="R5q-05-rcn" secondAttribute="trailing" constant="20" id="1G6-2Y-WyS"/>
-                            <constraint firstItem="iWe-8Q-uIe" firstAttribute="top" secondItem="7wa-ef-azX" secondAttribute="bottom" constant="7" id="5ia-v2-VTP"/>
-                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="2Ml-MQ-bpz" secondAttribute="trailing" constant="20" id="6NV-uJ-fXu"/>
-                            <constraint firstItem="iP9-hs-mYX" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="6gW-7J-Y1p"/>
-                            <constraint firstItem="wmN-cM-1c4" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="8QW-0v-Okl"/>
-                            <constraint firstItem="FAC-5r-3ga" firstAttribute="top" secondItem="2Ml-MQ-bpz" secondAttribute="bottom" constant="30" id="DXP-9G-Tdo"/>
-                            <constraint firstItem="iP9-hs-mYX" firstAttribute="top" secondItem="iWe-8Q-uIe" secondAttribute="bottom" constant="7" id="Dqy-tT-u1J"/>
-                            <constraint firstItem="hJv-tR-C73" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="F7w-Sm-nrz"/>
-                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="wmN-cM-1c4" secondAttribute="trailing" constant="20" id="GU0-oq-KHF"/>
-                            <constraint firstItem="hJv-tR-C73" firstAttribute="top" secondItem="OFU-Gw-5qe" secondAttribute="bottom" constant="7.5" id="GVP-h2-JEs"/>
-                            <constraint firstItem="R5q-05-rcn" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="Hct-Rt-9q8"/>
-                            <constraint firstItem="7wa-ef-azX" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="HpV-ss-ets"/>
-                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="F5u-Ec-51z" secondAttribute="trailing" constant="20" id="IOl-hT-Swd"/>
-                            <constraint firstItem="2Ml-MQ-bpz" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="Mg1-Jh-tha"/>
-                            <constraint firstItem="wmN-cM-1c4" firstAttribute="top" secondItem="Svg-9i-p9R" secondAttribute="bottom" constant="7.2000000000000002" id="NPg-PE-BPQ"/>
-                            <constraint firstItem="FOo-Q7-vYT" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="PPk-9p-3Q5"/>
-                            <constraint firstItem="FAC-5r-3ga" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="110" id="VFD-Ht-T9V"/>
-                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="iWe-8Q-uIe" secondAttribute="trailing" constant="20" id="WuO-O8-ID9"/>
-                            <constraint firstItem="TLN-rh-kna" firstAttribute="top" secondItem="iP9-hs-mYX" secondAttribute="bottom" constant="20" id="app-Qt-bqF"/>
-                            <constraint firstItem="iWe-8Q-uIe" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="bW9-Yw-gUk"/>
-                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="Svg-9i-p9R" secondAttribute="trailing" constant="20" id="bsV-F6-X37"/>
-                            <constraint firstItem="OFU-Gw-5qe" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="dTf-lL-S0D"/>
-                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="FOo-Q7-vYT" secondAttribute="trailing" constant="20" id="dcQ-fY-E48"/>
-                            <constraint firstItem="Svg-9i-p9R" firstAttribute="top" secondItem="F5u-Ec-51z" secondAttribute="bottom" constant="7.5" id="el1-OI-BOg"/>
-                            <constraint firstItem="2Ml-MQ-bpz" firstAttribute="top" secondItem="FOo-Q7-vYT" secondAttribute="bottom" constant="8.5" id="fYF-tM-B61"/>
-                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="FAC-5r-3ga" secondAttribute="trailing" constant="110" id="ihK-sQ-Qdf"/>
-                            <constraint firstItem="7wa-ef-azX" firstAttribute="top" secondItem="FAC-5r-3ga" secondAttribute="bottom" constant="7" id="jrY-9X-nCw"/>
-                            <constraint firstItem="R5q-05-rcn" firstAttribute="top" secondItem="wmN-cM-1c4" secondAttribute="bottom" constant="8.5" id="koF-lq-AFf"/>
-                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="iP9-hs-mYX" secondAttribute="trailing" constant="20" id="ljM-uS-Rsw"/>
-                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="hJv-tR-C73" secondAttribute="trailing" constant="20" id="low-3d-qdz"/>
-                            <constraint firstItem="F5u-Ec-51z" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="oNv-GD-d5l"/>
-                            <constraint firstItem="Svg-9i-p9R" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="tSP-pb-cFG"/>
-                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="7wa-ef-azX" secondAttribute="trailing" constant="20" id="uK4-rS-xad"/>
-                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="OFU-Gw-5qe" secondAttribute="trailing" constant="20" id="ufJ-1Y-k0C"/>
-                            <constraint firstItem="TLN-rh-kna" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="120" id="uh1-LQ-IdF"/>
-                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="TLN-rh-kna" secondAttribute="trailing" constant="120" id="vAO-Cr-6hU"/>
-                            <constraint firstItem="F5u-Ec-51z" firstAttribute="top" secondItem="MJq-7W-7p0" secondAttribute="top" id="vto-sq-G9g"/>
-                            <constraint firstItem="FOo-Q7-vYT" firstAttribute="top" secondItem="hJv-tR-C73" secondAttribute="bottom" constant="7.5" id="wC9-yG-Xb4"/>
+                            <constraint firstItem="art-Ip-NDG" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="0S3-cN-CZS"/>
+                            <constraint firstItem="OFU-Gw-5qe" firstAttribute="top" secondItem="R5q-05-rcn" secondAttribute="bottom" constant="15" id="1GY-lh-QT8"/>
+                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="LVb-e1-4n6" secondAttribute="trailing" constant="20" id="1bH-kj-czt"/>
+                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="iP9-hs-mYX" secondAttribute="trailing" constant="20" id="3Ou-om-nNw"/>
+                            <constraint firstItem="IJT-Cv-TwL" firstAttribute="top" secondItem="Svg-9i-p9R" secondAttribute="bottom" constant="21.5" id="4au-UA-H6V"/>
+                            <constraint firstItem="TLN-rh-kna" firstAttribute="bottom" secondItem="MJq-7W-7p0" secondAttribute="bottom" id="5GE-Ih-v1e"/>
+                            <constraint firstItem="IJT-Cv-TwL" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="6dy-NF-OHS"/>
+                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="wmN-cM-1c4" secondAttribute="trailing" constant="20" id="999-HV-gy8"/>
+                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="F5u-Ec-51z" secondAttribute="trailing" constant="20" id="9U3-BW-0Ko"/>
+                            <constraint firstItem="FAC-5r-3ga" firstAttribute="top" secondItem="reP-R0-TZR" secondAttribute="bottom" id="ACC-6L-63x"/>
+                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="IJT-Cv-TwL" secondAttribute="trailing" constant="20" id="Bgj-63-g1L"/>
+                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="hJv-tR-C73" secondAttribute="trailing" constant="20" id="DRX-2O-g6a"/>
+                            <constraint firstItem="F5u-Ec-51z" firstAttribute="top" secondItem="MJq-7W-7p0" secondAttribute="top" id="FNV-AV-yPd"/>
+                            <constraint firstItem="7wa-ef-azX" firstAttribute="top" secondItem="FAC-5r-3ga" secondAttribute="bottom" constant="10" id="Fjc-Wf-G0O"/>
+                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="R5q-05-rcn" secondAttribute="trailing" constant="20" id="Gmg-f4-D8u"/>
+                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="hJv-tR-C73" secondAttribute="trailing" constant="20" id="JHT-V5-FX9"/>
+                            <constraint firstItem="hJv-tR-C73" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="L8Q-IL-jhA"/>
+                            <constraint firstItem="LVb-e1-4n6" firstAttribute="top" secondItem="wmN-cM-1c4" secondAttribute="bottom" constant="15" id="LOO-WA-KGG"/>
+                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="7wa-ef-azX" secondAttribute="trailing" constant="20" id="Lb0-Cn-YXg"/>
+                            <constraint firstItem="2Ml-MQ-bpz" firstAttribute="top" secondItem="LVb-e1-4n6" secondAttribute="bottom" constant="10" id="Li1-dE-YbA"/>
+                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="FAC-5r-3ga" secondAttribute="trailing" constant="20" id="Nfe-Cr-V07"/>
+                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="TLN-rh-kna" secondAttribute="trailing" constant="20" id="O9H-n6-CiX"/>
+                            <constraint firstItem="R5q-05-rcn" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="Qwr-e4-rEo"/>
+                            <constraint firstItem="FAC-5r-3ga" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="SUZ-TI-Sf4"/>
+                            <constraint firstItem="reP-R0-TZR" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="SYV-9H-26S"/>
+                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="OFU-Gw-5qe" secondAttribute="trailing" constant="20" id="Ttk-3T-w9B"/>
+                            <constraint firstItem="wmN-cM-1c4" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="X9x-IZ-pzO"/>
+                            <constraint firstItem="iWe-8Q-uIe" firstAttribute="top" secondItem="7wa-ef-azX" secondAttribute="bottom" constant="5" id="XGy-fY-mSL"/>
+                            <constraint firstItem="F5u-Ec-51z" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="b7y-1I-5oP"/>
+                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="reP-R0-TZR" secondAttribute="trailing" constant="20" id="bEr-mI-D1n"/>
+                            <constraint firstItem="iP9-hs-mYX" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="cBW-Ob-4eu"/>
+                            <constraint firstItem="iWe-8Q-uIe" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="cwR-A0-QXj"/>
+                            <constraint firstItem="TLN-rh-kna" firstAttribute="top" secondItem="iP9-hs-mYX" secondAttribute="bottom" constant="16" id="fdN-nx-JpO"/>
+                            <constraint firstItem="TLN-rh-kna" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="gPv-oW-Ofr"/>
+                            <constraint firstItem="wmN-cM-1c4" firstAttribute="top" secondItem="IJT-Cv-TwL" secondAttribute="bottom" constant="10" id="gU1-I0-uma"/>
+                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="iWe-8Q-uIe" secondAttribute="trailing" constant="20" id="i9L-JG-5fQ"/>
+                            <constraint firstItem="2Ml-MQ-bpz" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="iN3-iu-LuK"/>
+                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="art-Ip-NDG" secondAttribute="trailing" constant="20" id="k6q-Wq-0HO"/>
+                            <constraint firstItem="art-Ip-NDG" firstAttribute="top" secondItem="2Ml-MQ-bpz" secondAttribute="bottom" constant="15" id="kh9-X4-vX1"/>
+                            <constraint firstItem="LVb-e1-4n6" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="lDd-Vx-dZp"/>
+                            <constraint firstItem="hJv-tR-C73" firstAttribute="top" secondItem="OFU-Gw-5qe" secondAttribute="bottom" constant="10" id="m5F-RQ-KQi"/>
+                            <constraint firstItem="Svg-9i-p9R" firstAttribute="top" secondItem="F5u-Ec-51z" secondAttribute="bottom" id="mhs-fe-f5d"/>
+                            <constraint firstItem="reP-R0-TZR" firstAttribute="top" secondItem="hJv-tR-C73" secondAttribute="bottom" constant="15" id="mz9-3c-axj"/>
+                            <constraint firstItem="7wa-ef-azX" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="s9E-Ph-UcI"/>
+                            <constraint firstItem="Svg-9i-p9R" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="sIT-vD-21G"/>
+                            <constraint firstItem="iP9-hs-mYX" firstAttribute="top" secondItem="iWe-8Q-uIe" secondAttribute="bottom" constant="5" id="uDj-Eg-lzz"/>
+                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="Svg-9i-p9R" secondAttribute="trailing" constant="20" id="wZh-v4-Qss"/>
+                            <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="2Ml-MQ-bpz" secondAttribute="trailing" constant="20" id="x4B-mC-v5s"/>
+                            <constraint firstItem="hJv-tR-C73" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="xJ0-x6-pss"/>
+                            <constraint firstItem="OFU-Gw-5qe" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="yYJ-8t-7vB"/>
+                            <constraint firstItem="R5q-05-rcn" firstAttribute="top" secondItem="art-Ip-NDG" secondAttribute="bottom" constant="10" id="zU4-nl-oEr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lWX-YC-eYy"/>
                     <connections>
-                        <outlet property="SliderNumOfHours" destination="FOo-Q7-vYT" id="hej-Wl-Gwz"/>
                         <outlet property="segLocationOption" destination="FAC-5r-3ga" id="WLo-43-J45"/>
                         <outlet property="txtBuildingCode" destination="wmN-cM-1c4" id="8w7-vX-Git"/>
                         <outlet property="txtCity" destination="iWe-8Q-uIe" id="VAe-Lr-apN"/>
                         <outlet property="txtCountry" destination="iP9-hs-mYX" id="qwN-wI-2VA"/>
-                        <outlet property="txtNumberOfHours" destination="hJv-tR-C73" id="9ob-Wk-ldj"/>
+                        <outlet property="txtNumberOfHours" destination="hJv-tR-C73" id="1Bb-6f-KIG"/>
                         <outlet property="txtPlateNumber" destination="R5q-05-rcn" id="dQe-b9-aQ8"/>
                         <outlet property="txtStreetAddress" destination="7wa-ef-azX" id="iix-Es-KTh"/>
                         <outlet property="txtSuitNumberOfHost" destination="2Ml-MQ-bpz" id="WnX-iY-I2f"/>

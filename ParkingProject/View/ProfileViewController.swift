@@ -17,6 +17,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var plateLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
+    private let mageUserDefaults = MaGeUserDefaults()
     
     private var cancellables : Set<AnyCancellable> = []
     
@@ -34,12 +35,16 @@ class ProfileViewController: UIViewController {
       }
     
     override func viewDidAppear(_ animated: Bool) {
-        firebaseController.getUserProfile(userId: "0")
+        firebaseController.getUserProfile(userId: mageUserDefaults.getUserId())
         recieveChanges()
     }
     
     @objc func logOutUser(){
         print(#function, "log out pressed")
+//        mageUserDefaults.userLogOut()
+   
+//        self.tabBarController?.view.removeFromSuperview()
+
     }
     
     private func recieveChanges(){

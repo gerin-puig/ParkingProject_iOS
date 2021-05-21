@@ -13,8 +13,11 @@ struct Location {
     var coordinates:CLLocationCoordinate2D
 }
 
-class LocationController{
+class LocationController  : UIViewController{
     let locationManager = CLLocationManager()
+   
+    @Published var latVariable : Double?
+    @Published var lngVariable : Double?
     
     func initRequests() {
         locationManager.requestAlwaysAuthorization()
@@ -23,15 +26,56 @@ class LocationController{
         if CLLocationManager.locationServicesEnabled(){
             print("Location access granted")
             
-            //locationManager.delegate = self
+            locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.startUpdatingLocation()
+
         }
         else{
             print("Location access denied")
         }
         
     }
+
+    
+   
 }
 
+extension LocationController :CLLocationManagerDelegate{
+  
+    
+//    -> CLLocationCoordinate2D
+func determineCurrentLocation() {
+    self.locationManager.requestWhenInUseAuthorization()
+    self.locationManager.requestAlwaysAuthorization()
+    
+    if CLLocationManager.locationServicesEnabled(){
+        print(#function, "Location access granted")
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        self.locationManager.startUpdatingLocation()
 
+    }else{
+        print(#function, "Location access  denied")
+    }
+}
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        //fetch the deivce location\
+    
+        guard let currentLocation : CLLocationCoordinate2D = manager.location?.coordinate else{
+            print(#function,"Error occured")
+            return
+        }
+        
+        self.latVariable = currentLocation.latitude
+        self.lngVariable = currentLocation.longitude
+        print(#function, "lat : \(currentLocation.latitude) , long : \(currentLocation.longitude)")
+        
+    }
+    
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(#function,"Unable to get the location \(error)")
+    }
+  
+}

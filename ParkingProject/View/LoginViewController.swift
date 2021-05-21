@@ -16,6 +16,14 @@ class LoginViewController: UIViewController {
     
     let firebaseController = FirebaseController()
     
+// <<<<<<< Mayank_Dev
+//     let mageUserDefaults = MaGeUserDefaults()
+//     var newUser:Bool?
+//     var userData:User?
+//     var userProfile:Profile?
+    
+// =======
+// >>>>>>> Master
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,6 +52,7 @@ class LoginViewController: UIViewController {
                 let parkingListScreen = ss.storyboard?.instantiateViewController(identifier: "TabBarController") as? UITabBarController
                 
                 ss.show(parkingListScreen!, sender: ss)
+                self!.mageUserDefaults.userLogIn(username: email, password: password, isLoggedIn: self!.isRememberMe.isOn)
             }
             else
             {

@@ -12,13 +12,11 @@ import FirebaseAuth
 class FirebaseController : ObservableObject{
     
     private let firebaseDb = Firestore.firestore()
-    
+    private var MageUserDefaults = MaGeUserDefaults()
     @Published private var userId : String?
     @Published var profileData : Profile?
     @Published var parkingDataList : [Parking] = []
-    
     var list : [Parking] = []
-    
     private static var sharedInstance : FirebaseController?
     
     static func getInstance() -> FirebaseController{
@@ -49,11 +47,15 @@ class FirebaseController : ObservableObject{
 //             guard error == nil else{
 //                 myView.showAlert(title: "Invalid", msg: "Account Not Found!")
 //                 return
+    
+    
     func signInUser(email:String, password:String, completionBlock: @escaping (_ success:Bool) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password, completion: {[weak self] result, error in
             guard let strongSelf = self else { return }
+            
             if let user = result?.user {
-                //print(user)
+                self?.MageUserDefaults.setUserId(userId: user.uid)
+              
                 completionBlock(true)
             } else {
                 completionBlock(false)
@@ -122,7 +124,7 @@ class FirebaseController : ObservableObject{
     
     func addParkingToUser(parking:Parking){
         do {
-            //try firebaseDb.collection("parking").document(getUserIdFromFirebaseAuth()).setData(from: parking)
+            
             try firebaseDb.collection("parking").addDocument(from: parking)
             print(#function,"Parking added")
         } catch {
@@ -133,7 +135,7 @@ class FirebaseController : ObservableObject{
     
     //parking car functions
     func getParkingListData(user_id : String){
-        firebaseDb.collectionGroup("parking").whereField("user_id", isEqualTo: user_id).getDocuments { queryResult, error in
+        firebaseDb.collectionGroup("parking").whereField("user_id", isEqualTo: user_id).order(by: "date").getDocuments { queryResult, error in
             if let err = error{
                 print(#function, "Error Occured \(err)")
             }else{
