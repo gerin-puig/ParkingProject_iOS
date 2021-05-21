@@ -35,7 +35,7 @@ class ProfileViewController: UIViewController {
       }
     
     override func viewDidAppear(_ animated: Bool) {
-        firebaseController.getUserProfile(userId: "0")
+        firebaseController.getUserProfile(userId: mageUserDefaults.getUserId())
         recieveChanges()
     }
     

@@ -17,23 +17,28 @@ class HomeViewController:  UIViewController {
     let firebaseDb = FirebaseController.getInstance()
     private var cancellables : Set<AnyCancellable> = []
 
-    private let userDefaults = MaGeUserDefaults()
+    private let mageUserDefaults = MaGeUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.navigationController?.navigationBar.isHidden = false
 
-        self.firebaseDb.getParkingListData(user_id: userDefaults.getUserId())
-        self.recieveParkingListChanges()
-        
+        //MARK : Parking table source
         self.parkingTableView.delegate = self
         self.parkingTableView.dataSource = self
         self.parkingTableView.rowHeight = 90
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.parkingList.removeAll()
+
+        self.firebaseDb.getParkingListData(user_id: mageUserDefaults.getUserId())
+        self.recieveParkingListChanges()
+    }
+    
     private func recieveParkingListChanges(){
+
         self.firebaseDb.$parkingDataList
             .receive(on: RunLoop.main)
             .sink{(listOfParking) in
@@ -44,7 +49,6 @@ class HomeViewController:  UIViewController {
         }
             .store(in: &cancellables)
     }
-
     
 }
 
@@ -64,7 +68,7 @@ extension HomeViewController : UITableViewDataSource,UITableViewDelegate{
         reuseIdentifier: "parkingCell")
         }
 
-        cell?.setParkingCell(parkingListArray: parkingValue)
+        cell?.setParkingCell(parkingListData : parkingValue)
         
         return cell!
     }

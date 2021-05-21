@@ -124,7 +124,7 @@ class FirebaseController : ObservableObject{
     
     func addParkingToUser(parking:Parking){
         do {
-            //try firebaseDb.collection("parking").document(getUserIdFromFirebaseAuth()).setData(from: parking)
+            
             try firebaseDb.collection("parking").addDocument(from: parking)
             print(#function,"Parking added")
         } catch {
@@ -135,7 +135,7 @@ class FirebaseController : ObservableObject{
     
     //parking car functions
     func getParkingListData(user_id : String){
-        firebaseDb.collectionGroup("parking").whereField("user_id", isEqualTo: user_id).getDocuments { queryResult, error in
+        firebaseDb.collectionGroup("parking").whereField("user_id", isEqualTo: user_id).order(by: "date").getDocuments { queryResult, error in
             if let err = error{
                 print(#function, "Error Occured \(err)")
             }else{

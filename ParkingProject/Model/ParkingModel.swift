@@ -8,7 +8,7 @@
 import Foundation
 
 struct Parking : Codable{
-//    var apt_number : String
+    
     var building_code : String
     var date : String
     var geo_location : String
