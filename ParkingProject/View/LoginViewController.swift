@@ -16,14 +16,12 @@ class LoginViewController: UIViewController {
     
     let firebaseController = FirebaseController()
     
-// <<<<<<< Mayank_Dev
-//     let mageUserDefaults = MaGeUserDefaults()
-//     var newUser:Bool?
-//     var userData:User?
-//     var userProfile:Profile?
+     let mageUserDefaults = MaGeUserDefaults()
+     var newUser:Bool?
+     var userData:User?
+     var userProfile:Profile?
     
-// =======
-// >>>>>>> Master
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
