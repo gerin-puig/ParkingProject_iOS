@@ -55,7 +55,7 @@ class FirebaseController : ObservableObject{
             
             if let user = result?.user {
                 self?.MageUserDefaults.setUserId(userId: user.uid)
-              
+                print("Saved User Id in user Defaults")
                 completionBlock(true)
             } else {
                 completionBlock(false)
