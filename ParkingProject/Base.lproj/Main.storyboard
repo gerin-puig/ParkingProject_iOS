@@ -339,7 +339,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S1C-vD-fXU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5174" y="346"/>
+            <point key="canvasLocation" x="5173.913043478261" y="345.53571428571428"/>
         </scene>
         <!--New-->
         <scene sceneID="1I1-TJ-UoE">
@@ -671,6 +671,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x2b-PH-bYR">
+                                <rect key="frame" x="20" y="466.5" width="374" height="395.5"/>
+                            </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="q5V-RK-ICQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -678,6 +681,8 @@
                             <constraint firstItem="q5V-RK-ICQ" firstAttribute="trailing" secondItem="Ong-Zh-KTd" secondAttribute="trailing" constant="20" id="0OO-kD-6WR"/>
                             <constraint firstItem="hcN-eA-9Sr" firstAttribute="leading" secondItem="q5V-RK-ICQ" secondAttribute="leading" constant="20" id="3QN-TB-2hU"/>
                             <constraint firstItem="Xz9-oZ-mif" firstAttribute="top" secondItem="hN7-9S-MdD" secondAttribute="bottom" constant="40" id="3aS-jL-KVf"/>
+                            <constraint firstItem="x2b-PH-bYR" firstAttribute="leading" secondItem="q5V-RK-ICQ" secondAttribute="leading" constant="20" id="8fB-nv-NIe"/>
+                            <constraint firstItem="x2b-PH-bYR" firstAttribute="bottom" secondItem="q5V-RK-ICQ" secondAttribute="bottom" id="8ut-XY-YvI"/>
                             <constraint firstItem="TOW-sA-IZg" firstAttribute="top" secondItem="Fip-Rx-GHT" secondAttribute="bottom" constant="10" id="B3F-pw-L2M"/>
                             <constraint firstItem="q5V-RK-ICQ" firstAttribute="trailing" secondItem="Fip-Rx-GHT" secondAttribute="trailing" constant="20" id="CnH-Po-0df"/>
                             <constraint firstItem="hcN-eA-9Sr" firstAttribute="top" secondItem="2ue-Bd-D31" secondAttribute="bottom" constant="10" id="D9g-46-ka8"/>
@@ -696,24 +701,27 @@
                             <constraint firstItem="q5V-RK-ICQ" firstAttribute="trailing" secondItem="fB6-QC-aLW" secondAttribute="trailing" constant="20" id="aFi-ea-YS6"/>
                             <constraint firstItem="fB6-QC-aLW" firstAttribute="top" secondItem="rVd-xL-eI0" secondAttribute="bottom" constant="15" id="dAD-iY-NTB"/>
                             <constraint firstItem="rVd-xL-eI0" firstAttribute="leading" secondItem="q5V-RK-ICQ" secondAttribute="leading" constant="20" id="eLn-6D-tH9"/>
+                            <constraint firstItem="x2b-PH-bYR" firstAttribute="top" secondItem="TOW-sA-IZg" secondAttribute="bottom" constant="15" id="ele-0d-RwP"/>
                             <constraint firstItem="Xz9-oZ-mif" firstAttribute="leading" secondItem="q5V-RK-ICQ" secondAttribute="leading" constant="20" id="jUf-5N-3zq"/>
                             <constraint firstItem="Fip-Rx-GHT" firstAttribute="top" secondItem="hcN-eA-9Sr" secondAttribute="bottom" constant="15" id="mfy-qS-bWW"/>
                             <constraint firstItem="q5V-RK-ICQ" firstAttribute="trailing" secondItem="hcN-eA-9Sr" secondAttribute="trailing" constant="20" id="qfd-rp-UuK"/>
                             <constraint firstItem="q5V-RK-ICQ" firstAttribute="trailing" secondItem="Xz9-oZ-mif" secondAttribute="trailing" constant="20" id="shI-zb-up5"/>
                             <constraint firstItem="Ong-Zh-KTd" firstAttribute="top" secondItem="fB6-QC-aLW" secondAttribute="bottom" constant="10" id="uHJ-XH-esk"/>
                             <constraint firstItem="hN7-9S-MdD" firstAttribute="leading" secondItem="q5V-RK-ICQ" secondAttribute="leading" constant="20" id="xQu-Sl-Ue7"/>
+                            <constraint firstItem="q5V-RK-ICQ" firstAttribute="trailing" secondItem="x2b-PH-bYR" secondAttribute="trailing" constant="20" id="zeg-fB-vHp"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="buildingCodeLabel" destination="rVd-xL-eI0" id="TCl-dH-uEl"/>
                         <outlet property="licensePlateLabel" destination="Ong-Zh-KTd" id="MOJ-6K-Eo9"/>
+                        <outlet property="mapView" destination="x2b-PH-bYR" id="ZyE-IQ-j3I"/>
                         <outlet property="numberOfHoursLabel" destination="hcN-eA-9Sr" id="rjZ-G0-mip"/>
                         <outlet property="parkingAddressLabel" destination="TOW-sA-IZg" id="hFN-oK-VJN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7h-sY-dPm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5174" y="-346"/>
+            <point key="canvasLocation" x="5173.913043478261" y="-346.20535714285711"/>
         </scene>
         <!--Splash Screen View Controller-->
         <scene sceneID="Qep-Cw-Rx4">

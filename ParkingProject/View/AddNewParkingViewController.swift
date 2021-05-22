@@ -55,6 +55,8 @@ class AddNewParkingViewController: UIViewController {
     @IBAction func segLocationValChanged(_ sender: UISegmentedControl) {
         switch segLocationOption.selectedSegmentIndex {
             case 1:
+                txtCity.text = ""
+                txtStreetAddress.text = ""
                 txtCountry.isHidden = true
                 txtCity.placeholder = "Enter Longitude"
                 txtStreetAddress.placeholder = "Enter Latitude"
@@ -62,9 +64,10 @@ class AddNewParkingViewController: UIViewController {
                 self.getDeviceLocationAlertBox()
                 
             case 0:
+                txtCity.text = ""
+                txtStreetAddress.text = ""
                 txtCity.placeholder = "City"
                 txtStreetAddress.placeholder = "Street Address"
-                
                 txtCountry.isHidden = false
                 txtStreetAddress.isHidden = false
                 txtCity.isHidden = false
@@ -148,7 +151,7 @@ class AddNewParkingViewController: UIViewController {
             print(#function, "Longitude updates recieved")
                 self.longitude = lngVariable ?? 0.0
                 print(#function,self.longitude )
-                self.txtCity.text = String(self.longitude)
+                self.txtCity.text = "-"+String(self.longitude)
 
         }
             .store(in: &cancellables)
@@ -200,10 +203,10 @@ class AddNewParkingViewController: UIViewController {
         }else{
             if let placemarks = placemarkList, let placemark = placemarks.first{
                 let city = placemark.locality ?? "NA"
-                let street = placemark.country ?? "NA"
+                let street = placemark.thoroughfare ?? "NA"
                 print(#function,"------\(city),\(street)")
-                return "\(city),\(street)"
-
+                return "\(street),\(city)"
+//                -79.3798232 43.66981
             }else{
                 print("Error while getting location")
             }
@@ -214,14 +217,14 @@ class AddNewParkingViewController: UIViewController {
     func getDeviceLocationAlertBox(){
         let alert = UIAlertController(title: "Do you want to get device location?", message: "", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(
-                    title: "Enter manually",
+                    title: "Enter location manually",
                     style: .default,
                     handler: {
                         (UIAlertAction) in
                         
                     }))
         alert.addAction(UIAlertAction(
-                    title: "OK",
+                    title: "Get current location",
                     style: .default,
                     handler: {
                         (UIAlertAction) in

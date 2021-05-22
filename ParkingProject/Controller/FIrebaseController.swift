@@ -142,6 +142,7 @@ class FirebaseController : ObservableObject{
                 if queryResult!.documents.count == 0{
                     print(#function, "No results found")
                 }else{
+                    self.parkingDataList.removeAll()
                     for result in queryResult!.documents{
                         do{
                             let parkingData = try result.data(as : Parking.self)
