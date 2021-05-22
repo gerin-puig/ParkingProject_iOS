@@ -41,6 +41,11 @@ class AddNewParkingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = "MaGe"
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.systemYellow, NSAttributedString.Key.font: UIFont(name: "MarkerFelt-Thin", size: 40)]
+        
+        self.navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
         self.locationController.initRequests()
         
         //MARK : hours selection
@@ -77,7 +82,7 @@ class AddNewParkingViewController: UIViewController {
     }
     
     @IBAction func btnAddParkingPressed(_ sender: UIButton) {
-        guard let buildingCode = txtBuildingCode.text, let plateNum = txtPlateNumber.text, let numOfHours = txtNumberOfHours.text, let suitNumber = txtSuitNumberOfHost.text, let address = txtStreetAddress.text, let country = txtCountry.text, let city = txtCity.text else { return }
+        guard let buildingCode = txtBuildingCode.text, let plateNum = txtPlateNumber.text, let numOfHours = txtNumberOfHours.text, let suitNumber = txtSuitNumberOfHost.text, let address = txtStreetAddress.text, let country = txtCountry.text, let city = txtCity.text, let suit_no = txtSuitNumberOfHost.text  else { return }
         
         let today = Date()
         let formatter = DateFormatter()
@@ -95,7 +100,7 @@ class AddNewParkingViewController: UIViewController {
                     //print(userCoords)
                     let loc = "\(userCoords.0),\(userCoords.1)"
                   
-                    let parkingInfo = Parking(building_code: buildingCode, date: date, geo_location_lat: userCoords.0, geo_location_long: userCoords.1, plate_number: plateNum, number_of_hours: numOfHours, street_address: address, user_id: ss.firebaseControllerDb.getUserIdFromFirebaseAuth())
+                    let parkingInfo = Parking(building_code: buildingCode, date: date, geo_location_lat: userCoords.0, geo_location_long: userCoords.1, plate_number: plateNum, number_of_hours: numOfHours, street_address: address, user_id: ss.firebaseControllerDb.getUserIdFromFirebaseAuth(), suit_no: suit_no)
                     
                     self?.firebaseControllerDb.addParkingToUser(parking: parkingInfo)
                     
@@ -119,7 +124,8 @@ class AddNewParkingViewController: UIViewController {
                     let address = userAddress
                     print(#function, address)
 
-                    let parkingInfo = Parking(building_code: buildingCode, date: date, geo_location_lat: latAsString,geo_location_long : lngAsString, plate_number: plateNum, number_of_hours: numOfHours, street_address: address, user_id: self.mageUserDefaults.getUserId())
+                    let parkingInfo = Parking(building_code: buildingCode, date: date, geo_location_lat: latAsString,geo_location_long : lngAsString, plate_number: plateNum, number_of_hours: numOfHours, street_address: address, user_id: self.mageUserDefaults.getUserId(), suit_no: suit_no)
+                    
                  
                     
                     self.firebaseControllerDb.addParkingToUser(parking: parkingInfo)
