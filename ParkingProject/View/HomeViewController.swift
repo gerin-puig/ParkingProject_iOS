@@ -31,14 +31,11 @@ class HomeViewController:  UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.parkingList.removeAll()
-
         self.firebaseDb.getParkingListData(user_id: mageUserDefaults.getUserId())
         self.recieveParkingListChanges()
     }
     
     private func recieveParkingListChanges(){
-
         self.firebaseDb.$parkingDataList
             .receive(on: RunLoop.main)
             .sink{(listOfParking) in
