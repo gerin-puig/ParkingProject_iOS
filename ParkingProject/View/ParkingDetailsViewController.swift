@@ -26,18 +26,28 @@ class ParkingDetailsViewController: UIViewController, UIGestureRecognizerDelegat
     var parkingLat : Double?
     var parkingLng : Double?
 
-  
+
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
-    
         
+        self.title = "MaGe"
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.systemYellow, NSAttributedString.Key.font: UIFont(name: "MarkerFelt-Thin", size: 40)]
+        
+        self.navigationController?.navigationBar.titleTextAttributes = textAttributes as [NSAttributedString.Key : Any]
+     
+        let backbutton = UIBarButtonItem(image: UIImage(named: ""), style: .plain, target: self, action: #selector(self.backAction))
+        backbutton.title = "< Back"
+        backbutton.tintColor = .systemYellow
+        self.navigationItem.leftBarButtonItem  = backbutton
+        
+        
+          
         //Mark : Set Label for data
-        buildingCodeLabel.text = parkingDetail?.building_code
+        buildingCodeLabel.text = parkingDetail?.suit_no
         licensePlateLabel.text = parkingDetail?.plate_number
         numberOfHoursLabel.text = parkingDetail?.number_of_hours
-        parkingAddressLabel.text = /*parkingDetail!.apt_number + ", " + */parkingDetail!.street_address
+        parkingAddressLabel.text = "\(parkingDetail?.building_code ?? "NA"), \(parkingDetail?.street_address ?? "NA")"
         
         //MARK : setup map lat lng
         guard let latAsString = parkingDetail?.geo_location_lat , let lat = Double(latAsString) else {
@@ -75,7 +85,11 @@ class ParkingDetailsViewController: UIViewController, UIGestureRecognizerDelegat
         self.openInMapsAlertBox()
     }
   
-   
+    @objc func backAction(){
+        print("back clicked")
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     func openInMapsAlertBox(){
         let alert = UIAlertController(title: "Do you want to navigate to location using Maps?", message: "", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(
@@ -152,3 +166,7 @@ extension ParkingDetailsViewController : CLLocationManagerDelegate{
     }
     
 }
+
+
+
+

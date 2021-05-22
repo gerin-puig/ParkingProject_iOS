@@ -32,6 +32,10 @@ class ProfileViewController: UIViewController {
         logOutButton.tintColor = .systemYellow
         self.navigationItem.rightBarButtonItem  = logOutButton
         
+        self.title = "MaGe"
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.systemYellow, NSAttributedString.Key.font: UIFont(name: "MarkerFelt-Thin", size: 40)]
+        
+        self.navigationController?.navigationBar.titleTextAttributes = textAttributes
       }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -17,4 +17,5 @@ struct Parking : Codable{
     var number_of_hours : String
     var street_address : String
     var user_id : String
+    var suit_no : String
 }
