@@ -20,23 +20,35 @@ class ParkingDetailsViewController: UIViewController {
     @IBOutlet weak var parkingAddressLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     
+    var currentLat : Double?
+    var currentLng : Double?
+    
+    var parkingLat : Double?
+    var parkingLng : Double?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //Mark : Set Label for data
         buildingCodeLabel.text = parkingDetail?.building_code
         licensePlateLabel.text = parkingDetail?.plate_number
         numberOfHoursLabel.text = parkingDetail?.number_of_hours
         parkingAddressLabel.text = /*parkingDetail!.apt_number + ", " + */parkingDetail!.street_address
+        
+        //MARK : setup mapview
         guard let latAsString = parkingDetail?.geo_location_lat , let lat = Double(latAsString) else {
             return
         }
+        
+      
         guard let lngAsString = parkingDetail?.geo_location_long, let lng = Double(lngAsString) else {
             return
         }
-//        var parkingLocation = CLLocation(latitude: lat, longitude: lng)
-      
-        var parkingLocation = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+        
+        self.parkingLat = lat
+        self.parkingLng = lng
+        let parkingLocation = CLLocationCoordinate2D(latitude: self.parkingLat ?? 0.0, longitude: self.parkingLng ?? 0.0)
+        
         self.displayLocationOnMap(location: parkingLocation)
 
 //        self.locationManager.requestWhenInUseAuthorization()
@@ -46,31 +58,37 @@ class ParkingDetailsViewController: UIViewController {
         if CLLocationManager.locationServicesEnabled(){
             print(#function, "Location access granted")
             
-//            self.locationManager.delegate = self
-//            self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-//            self.locationManager.startUpdatingLocation()
+            self.locationManager.delegate = self
+            self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+            self.locationManager.startUpdatingLocation()
         }else{
             print(#function, "Location access  denied")
         }
     }
     
+    @IBAction func openInMapsButtonOnPressed(_ sender: Any) {
+        let parkingLocation = CLLocationCoordinate2D(latitude: self.parkingLat ?? 0.0, longitude: self.parkingLng ?? 0.0)
+        
+        self.openLocationInMapApp(destinationLocation: parkingLocation)
+    }
 }
 
 extension ParkingDetailsViewController : CLLocationManagerDelegate{
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        //fetch the deivce location\
-//
-//        guard let currentLocation : CLLocationCoordinate2D = manager.location?.coordinate else{
-//            return
-//        }
-//
-//        print(#function, "lat : \(currentLocation.latitude) , long : \(currentLocation.longitude)")
-//
-//        self.displayLocationOnMap(location: currentLocation)
-//    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        //fetch the deivce location
     
+        guard let currentLocation : CLLocationCoordinate2D = manager.location?.coordinate else{
+            print(#function,"Error occured")
+            return
+        }
+        
+        self.currentLat = currentLocation.latitude
+        self.currentLng = currentLocation.longitude
+        print(#function, "lat : \(currentLocation.latitude) , long : \(currentLocation.longitude)")
+        
+    }
     
- 
     func displayLocationOnMap(location : CLLocationCoordinate2D){
         //zoom
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
@@ -85,4 +103,26 @@ extension ParkingDetailsViewController : CLLocationManagerDelegate{
         annotation.title = "You are here!"
         self.mapView.addAnnotation(annotation)
     }
+    
+    func openLocationInMapApp(destinationLocation : CLLocationCoordinate2D){
+        let currentLocLat = self.currentLat ?? 0.0
+        let currentLocLng = self.currentLng ?? 0.0
+       
+
+        guard let latAsString = parkingDetail?.geo_location_lat, let destinationLat = Double(latAsString) else {
+            return
+        }
+        guard let lngAsString = parkingDetail?.geo_location_long, let destinationLng = Double(lngAsString) else {
+            return
+        }
+        
+        let currentLocation = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: currentLocLat, longitude: currentLocLng)))
+        currentLocation.name = "Current Position"
+        
+        let destinationLocation = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: destinationLat, longitude: destinationLng)))
+        destinationLocation.name = "Parking Location"
+        
+        MKMapItem.openMaps(with: [currentLocation, destinationLocation], launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
+    }
+    
 }
