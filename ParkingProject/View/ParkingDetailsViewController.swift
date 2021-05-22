@@ -8,7 +8,7 @@
 import UIKit
 import MapKit
 
-class ParkingDetailsViewController: UIViewController {
+class ParkingDetailsViewController: UIViewController, UIGestureRecognizerDelegate {
 
     var parkingDetail : Parking?
     let locationManager = CLLocationManager()
@@ -26,21 +26,24 @@ class ParkingDetailsViewController: UIViewController {
     var parkingLat : Double?
     var parkingLng : Double?
 
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
+    
+        
         //Mark : Set Label for data
         buildingCodeLabel.text = parkingDetail?.building_code
         licensePlateLabel.text = parkingDetail?.plate_number
         numberOfHoursLabel.text = parkingDetail?.number_of_hours
         parkingAddressLabel.text = /*parkingDetail!.apt_number + ", " + */parkingDetail!.street_address
         
-        //MARK : setup mapview
+        //MARK : setup map lat lng
         guard let latAsString = parkingDetail?.geo_location_lat , let lat = Double(latAsString) else {
             return
         }
         
-      
         guard let lngAsString = parkingDetail?.geo_location_long, let lng = Double(lngAsString) else {
             return
         }
@@ -51,9 +54,9 @@ class ParkingDetailsViewController: UIViewController {
         
         self.displayLocationOnMap(location: parkingLocation)
 
-//        self.locationManager.requestWhenInUseAuthorization()
-//        self.locationManager.requestAlwaysAuthorization()
-//
+        let onMapTap = UITapGestureRecognizer(target: self, action: #selector(onMapClick))
+          mapView.addGestureRecognizer(onMapTap)
+        
         
         if CLLocationManager.locationServicesEnabled(){
             print(#function, "Location access granted")
@@ -64,13 +67,36 @@ class ParkingDetailsViewController: UIViewController {
         }else{
             print(#function, "Location access  denied")
         }
+        
+     
     }
     
-    @IBAction func openInMapsButtonOnPressed(_ sender: Any) {
-        let parkingLocation = CLLocationCoordinate2D(latitude: self.parkingLat ?? 0.0, longitude: self.parkingLng ?? 0.0)
-        
-        self.openLocationInMapApp(destinationLocation: parkingLocation)
+    @objc func onMapClick(){
+        self.openInMapsAlertBox()
     }
+  
+   
+    func openInMapsAlertBox(){
+        let alert = UIAlertController(title: "Do you want to navigate to location using Maps?", message: "", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(
+                    title: "Go Back",
+                    style: .default,
+                    handler: nil))
+                        
+        alert.addAction(UIAlertAction(
+                    title: "Yes",
+                    style: .default,
+                    handler: {
+                        (UIAlertAction) in
+                        let parkingLocation = CLLocationCoordinate2D(latitude: self.parkingLat ?? 0.0, longitude: self.parkingLng ?? 0.0)
+                        
+                        self.openLocationInMapApp(destinationLocation: parkingLocation)
+
+                    }))
+
+                self.present(alert, animated: true, completion: nil)
+    }
+    
 }
 
 extension ParkingDetailsViewController : CLLocationManagerDelegate{

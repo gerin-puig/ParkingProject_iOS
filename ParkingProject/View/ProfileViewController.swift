@@ -35,24 +35,29 @@ class ProfileViewController: UIViewController {
       }
     
     override func viewDidAppear(_ animated: Bool) {
-        firebaseController.getUserProfile(userId: mageUserDefaults.getUserId())
-        recieveChanges()
+        self.firebaseController.getUserProfile(userId: mageUserDefaults.getUserId())
+        self.recieveProfileChanges()
     }
     
     @objc func logOutUser(){
         print(#function, "log out pressed")
-//        mageUserDefaults.userLogOut()
-   
-//        self.tabBarController?.view.removeFromSuperview()
+        mageUserDefaults.userLogOut()
 
+        self.tabBarController?.tabBar.isHidden = true
+        guard let loginScreen = storyboard?.instantiateViewController(identifier: "LoginScreen") as? LoginViewController else{
+            return
+        }
+        
+        show(loginScreen, sender: (Any).self)
     }
     
-    private func recieveChanges(){
+    private func recieveProfileChanges(){
         self.firebaseController.$profileData
             .receive(on: RunLoop.main)
-            .sink{(listofLaunches) in
+            .sink{(profileFirebaseData) in
             print(#function, "Data updates recieved")
-                self.profileData = listofLaunches
+                print(profileFirebaseData)
+                self.profileData = profileFirebaseData
                 self.emailLabel.text = self.profileData?.email_id
                 self.firstNameLabel.text = self.profileData?.first_name
                 self.lastNameLabel.text = self.profileData?.last_name
@@ -69,6 +74,7 @@ class ProfileViewController: UIViewController {
             return
         }
         
+        print(self.profileData)
         editProfileVC.profileData = self.profileData
 
         show(editProfileVC, sender: (Any).self)
