@@ -21,8 +21,18 @@ class EditProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.navigationItem.setHidesBackButton(true, animated: true)
+        self.title = "MaGe"
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.systemYellow, NSAttributedString.Key.font: UIFont(name: "MarkerFelt-Thin", size: 40)]
+        
+        self.navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
+        let backbutton = UIBarButtonItem(image: UIImage(named: ""), style: .plain, target: self, action: #selector(self.backAction))
+        backbutton.title = "< Back"
+        backbutton.tintColor = .systemYellow
+        self.navigationItem.leftBarButtonItem  = backbutton
+        
 
+        
         if(self.profileData !=  nil){
             self.setProfileData(profileData: self.profileData! )
         }
@@ -41,6 +51,10 @@ class EditProfileViewController: UIViewController {
         self.plateNumberLabel.text = profileData.plate_number
     }
     
+    @objc func backAction(){
+        print("back clicked")
+        self.navigationController?.popViewController(animated: true)
+    }
 
     @IBAction func saveProfileButton(_ sender: Any) {
         //save button firebase call
