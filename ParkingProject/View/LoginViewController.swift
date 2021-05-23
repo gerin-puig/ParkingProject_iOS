@@ -79,11 +79,3 @@ class LoginViewController: UIViewController {
     
     
 }
-
-extension UIViewController{
-    func showAlert(title:String,msg:String) {
-        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        self.present(alert, animated: true)
-    }
-}

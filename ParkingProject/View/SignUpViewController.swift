@@ -53,6 +53,4 @@ class SignUpViewController: UIViewController {
             
         }
     }
-    
-    
 }//class end
