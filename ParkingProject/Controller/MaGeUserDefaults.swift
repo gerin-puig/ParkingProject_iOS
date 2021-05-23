@@ -34,10 +34,15 @@ class MaGeUserDefaults{
         mageDefaults.removeObject(forKey: keyRememberMe)
         mageDefaults.removeObject(forKey: keyUsername)
         mageDefaults.removeObject(forKey: keyPassword)
+        mageDefaults.removeObject(forKey: keyUserId)
     }
     
     func getLoggedInUser() -> String{
         return mageDefaults.string(forKey: keyUsername)!
+    }
+    
+    func getSavedPassword() -> String{
+        return mageDefaults.string(forKey: keyPassword)!
     }
     
     func doRememberMe() -> Bool{

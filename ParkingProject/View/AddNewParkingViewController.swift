@@ -82,52 +82,63 @@ class AddNewParkingViewController: UIViewController {
     }
     
     @IBAction func btnAddParkingPressed(_ sender: UIButton) {
-        guard let buildingCode = txtBuildingCode.text, let plateNum = txtPlateNumber.text, let numOfHours = txtNumberOfHours.text, let suitNumber = txtSuitNumberOfHost.text, let address = txtStreetAddress.text, let country = txtCountry.text, let city = txtCity.text, let suit_no = txtSuitNumberOfHost.text  else { return }
+        guard let buildingCode = txtBuildingCode.text, let plateNum = txtPlateNumber.text, let numOfHours = txtNumberOfHours.text, let address = txtStreetAddress.text, let country = txtCountry.text, let city = txtCity.text, let suit_no = txtSuitNumberOfHost.text  else { return }
+        
+        guard buildingCode.count >= 5/*, plateNum.count >= 2, suit_no.count >= 2*/ else {
+            showAlert(title: "Add Parking", msg:"Building Code Must Be 5 Characters Long!")
+            return
+        }
+        guard plateNum.count >= 2 else {
+            showAlert(title: "Add Parking", msg:"Plate Number Must Be At Least 2 Characters Long!")
+            return
+        }
+        guard suit_no.count >= 2 else{
+            showAlert(title: "Add Parking", msg:"Suite/Apt Number Must Be At Least 2 Characters Long!")
+            return
+        }
         
         let today = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm E, d MMM y"
         let date = formatter.string(from: today)
         
+        
         switch segLocationOption.selectedSegmentIndex {
             case 0:
                 let postalAddress = "\(country), \(city), \(address)"
-                
+
                 self.getLocation(address: postalAddress){
                     [weak self] userCoords in
                     guard let ss = self else {return}
-                    
-                    //print(userCoords)
-                    let loc = "\(userCoords.0),\(userCoords.1)"
-                  
+
                     let parkingInfo = Parking(building_code: buildingCode, date: date, geo_location_lat: userCoords.0, geo_location_long: userCoords.1, plate_number: plateNum, number_of_hours: numOfHours, street_address: address, user_id: ss.firebaseControllerDb.getUserIdFromFirebaseAuth(), suit_no: suit_no)
-                    
+
                     self?.firebaseControllerDb.addParkingToUser(parking: parkingInfo)
-                    
+
                     ss.showAlert(title: "Add Parking", msg: "Parking Added!")
                 }
+
             case 1:
-                
-                
+
                 guard let latAsString = txtStreetAddress.text, let lat = Double(latAsString) else {
                     return
                 }
                 guard let lngAsString = txtCity.text, let lng = Double(lngAsString) else {
                     return
                 }
-                    
-                
+
+
                 let location = CLLocation(latitude: lat, longitude: lng)
-              
+
                 self.getReverseAddress(location: location){ userAddress in
-                    
+
                     let address = userAddress
                     print(#function, address)
 
                     let parkingInfo = Parking(building_code: buildingCode, date: date, geo_location_lat: latAsString,geo_location_long : lngAsString, plate_number: plateNum, number_of_hours: numOfHours, street_address: address, user_id: self.mageUserDefaults.getUserId(), suit_no: suit_no)
-                    
-                 
-                    
+
+
+
                     self.firebaseControllerDb.addParkingToUser(parking: parkingInfo)
 
                     self.showAlert(title: "Add Parking", msg: "Parking Added!")
@@ -150,6 +161,7 @@ class AddNewParkingViewController: UIViewController {
         }
             .store(in: &cancellables)
     }
+    
     private func recieveLngVariableChanges(){
         self.locationController.$latVariable
             .receive(on: RunLoop.main)

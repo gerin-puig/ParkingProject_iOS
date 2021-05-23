@@ -14,7 +14,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var txtUsername: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     
-    let firebaseController = FirebaseController()
+    let firebaseController = FirebaseController.getInstance()
     
      let mageUserDefaults = MaGeUserDefaults()
      var newUser:Bool?
@@ -25,8 +25,16 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let isRemembered = mageUserDefaults.doRememberMe()
+        if isRemembered{
+            let email = mageUserDefaults.getLoggedInUser()
+            let password = mageUserDefaults.getSavedPassword()
+            signUserIn(email: email, password: password)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func btnLoginPressed(_ sender: UIButton) {
@@ -40,8 +48,11 @@ class LoginViewController: UIViewController {
             showAlert(title: "Password Field", msg: "Password field is Empty!")
             return }
         
+        signUserIn(email: email, password: password)
+    }
+    
+    func signUserIn(email:String, password:String){
         //signs user in
-        //firebaseController.signInUser(email: email, password: password, isRememberMe: isRememberMe.isOn, myView: self)
         firebaseController.signInUser(email: email, password: password) {
             [weak self] success in
             guard let ss = self else {return}
@@ -51,6 +62,8 @@ class LoginViewController: UIViewController {
                 
                 ss.show(parkingListScreen!, sender: ss)
                 self!.mageUserDefaults.userLogIn(username: email, password: password, isLoggedIn: self!.isRememberMe.isOn)
+                self!.mageUserDefaults.setUserId(userId: self!.firebaseController.getUserIdFromFirebaseAuth())
+                print(self!.mageUserDefaults.getUserId())
             }
             else
             {
@@ -65,12 +78,4 @@ class LoginViewController: UIViewController {
     
     
     
-}
-
-extension UIViewController{
-    func showAlert(title:String,msg:String) {
-        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        self.present(alert, animated: true)
-    }
 }
