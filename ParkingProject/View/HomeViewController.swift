@@ -47,6 +47,7 @@ class HomeViewController:  UIViewController {
             .receive(on: RunLoop.main)
             .sink{(listOfParking) in
             print(#function, "Parking data updates recieved")
+                self.parkingTableView.reloadData()
                 self.parkingList.removeAll()
                 self.parkingList.append(contentsOf: listOfParking)
                 self.parkingTableView.reloadData()
@@ -97,12 +98,14 @@ extension HomeViewController : UITableViewDataSource,UITableViewDelegate{
             if(parking_id == nil){
                 showAlert(title: "Error", msg: "Error occured while deleting.")
             }else{
-                self.firebaseDb.deleteParking(parking_doc_id: parking_id!)
-                
-                //MARK : update list
-                self.parkingList.removeAll()
+                  self.firebaseDb.deleteParking(parking_doc_id: parking_id!)
+
                 self.firebaseDb.getParkingListData(user_id: mageUserDefaults.getUserId())
                 self.recieveParkingListChanges()
+                print("Executed")
+                
+                //MARK : update list
+              
             }
         }
     }

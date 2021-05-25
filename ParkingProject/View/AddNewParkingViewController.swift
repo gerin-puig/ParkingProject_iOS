@@ -132,9 +132,11 @@ class AddNewParkingViewController: UIViewController {
                 //if user chooses automatic
                 
                 guard let latAsString = txtStreetAddress.text, let lat = Double(latAsString) else {
+                    showAlert(title: "Please enter Latitude values", msg: "")
                     return
                 }
                 guard let lngAsString = txtCity.text, let lng = Double(lngAsString) else {
+                    showAlert(title: "Please enter Longitude values", msg: "")
                     return
                 }
 
