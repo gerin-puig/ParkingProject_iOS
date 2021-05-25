@@ -26,7 +26,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p5O-BK-w1X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2328" y="346"/>
+            <point key="canvasLocation" x="2320" y="346"/>
         </scene>
         <!--Home-->
         <scene sceneID="pFM-Dt-gWW">
@@ -64,7 +64,7 @@
             </objects>
             <point key="canvasLocation" x="3251" y="346"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--MaGe-->
         <scene sceneID="HG8-Lj-Yiv">
             <objects>
                 <viewController id="hnQ-Lb-ESB" customClass="ProfileViewController" customModule="ParkingProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -181,7 +181,7 @@
                             <constraint firstItem="dDM-fT-ZYq" firstAttribute="trailing" secondItem="eXp-4d-BPb" secondAttribute="trailing" constant="20" id="zu1-BP-9cd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="24x-78-KHs">
+                    <navigationItem key="navigationItem" title="MaGe" id="24x-78-KHs">
                         <barButtonItem key="rightBarButtonItem" title="Log out" id="aga-qP-Vky"/>
                     </navigationItem>
                     <connections>
@@ -338,7 +338,7 @@
             </objects>
             <point key="canvasLocation" x="3309" y="1071"/>
         </scene>
-        <!--Add New Parking View Controller-->
+        <!--MaGe-->
         <scene sceneID="Si1-Ni-UWb">
             <objects>
                 <viewController id="I58-No-fkX" customClass="AddNewParkingViewController" customModule="ParkingProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -492,7 +492,7 @@
                             <constraint firstItem="R5q-05-rcn" firstAttribute="top" secondItem="art-Ip-NDG" secondAttribute="bottom" constant="10" id="zU4-nl-oEr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="lWX-YC-eYy"/>
+                    <navigationItem key="navigationItem" title="MaGe" id="lWX-YC-eYy"/>
                     <connections>
                         <outlet property="segLocationOption" destination="FAC-5r-3ga" id="WLo-43-J45"/>
                         <outlet property="txtBuildingCode" destination="wmN-cM-1c4" id="8w7-vX-Git"/>
@@ -508,7 +508,7 @@
             </objects>
             <point key="canvasLocation" x="4288.4057971014499" y="1069.4196428571429"/>
         </scene>
-        <!--Home View Controller-->
+        <!--MaGe-->
         <scene sceneID="2Rv-DA-S31">
             <objects>
                 <viewController storyboardIdentifier="HomeScreen" id="W1M-BT-Zbg" customClass="HomeViewController" customModule="ParkingProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -569,7 +569,7 @@
                             <constraint firstItem="Oab-En-4Q4" firstAttribute="top" secondItem="PPd-6t-5Py" secondAttribute="top" id="v0y-di-qoq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="CcJ-NB-BLr"/>
+                    <navigationItem key="navigationItem" title="MaGe" id="CcJ-NB-BLr"/>
                     <connections>
                         <outlet property="parkingTableView" destination="Oab-En-4Q4" id="TiH-t7-Ub1"/>
                     </connections>
