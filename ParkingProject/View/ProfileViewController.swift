@@ -86,4 +86,66 @@ class ProfileViewController: UIViewController {
 
         show(editProfileVC, sender: (Any).self)
     }
+    
+    
+    @IBAction func OnProfileDeleteButtonPressed(_ sender: Any) {
+        self.onDeleteProfileAlertBox()
+    }
+    
+    
+    func onDeleteProfileAlertBox(){
+        let alert = UIAlertController(title: "Are you sure you want to delete your account?", message: "All the parking data will be lost if you delete the account.", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(
+                    title: "Go Back",
+                    style: .default,
+                    handler:nil))
+        alert.addAction(UIAlertAction(
+                    title: "Delete Account",
+                    style: .default,
+                    handler: {
+                        (UIAlertAction) in
+                        self.askForCredentialsAgain()
+
+                    }))
+
+                self.present(alert, animated: true, completion: nil)
+    }
+    
+    func askForCredentialsAgain(){
+        let alert = UIAlertController(title: "Please confirm account deletion by adding your password!", message: "", preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addTextField { textField in
+            textField.placeholder = "Enter password"
+        }
+        alert.addAction(UIAlertAction(
+                    title: "Go Back",
+                    style: .default,
+                    handler:nil))
+        alert.addAction(UIAlertAction(
+                    title: "Ok",
+                    style: .default,
+                    handler: {
+                        (UIAlertAction) in
+                        let userPassword = alert.textFields![0].text
+                        let userName = self.mageUserDefaults.getLoggedInUser()
+                        
+
+                        self.firebaseController.signInUser(email: userName, password: userPassword!) {
+                            [weak self] success in
+                            guard let ss = self else {return}
+                            
+                            if success{
+                                ss.firebaseController.deleteUserProfile()
+                                ss.logOutUser()
+                            }
+                            else
+                            {
+                                ss.showAlert(title: "Invalid", msg: "Account Not Found!")
+                            }
+                        }
+
+                    }))
+
+                self.present(alert, animated: true, completion: nil)
+    }
 }

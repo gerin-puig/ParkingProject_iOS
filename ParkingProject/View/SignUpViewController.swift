@@ -39,6 +39,7 @@ class SignUpViewController: UIViewController {
         
         if !email.isEmpty && !pass.isEmpty && !firstname.isEmpty && !lastname.isEmpty && !phone.isEmpty && !plate.isEmpty
         {
+
             
             FirebaseController().signUpUser(email: email, pass: pass){
                 [weak self] success in

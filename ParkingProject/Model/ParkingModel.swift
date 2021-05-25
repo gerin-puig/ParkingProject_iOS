@@ -8,9 +8,12 @@
 // Mayank Arya - 
 
 import Foundation
+import FirebaseFirestoreSwift
+
 
 struct Parking : Codable{
-    
+    @DocumentID  var doc_id : String?
+
     var building_code : String
     var date : String
     var geo_location_lat : String

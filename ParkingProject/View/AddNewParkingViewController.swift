@@ -148,8 +148,6 @@ class AddNewParkingViewController: UIViewController {
 
                     let parkingInfo = Parking(building_code: buildingCode, date: date, geo_location_lat: latAsString,geo_location_long : lngAsString, plate_number: plateNum, number_of_hours: numOfHours, street_address: address, user_id: self.mageUserDefaults.getUserId(), suit_no: suit_no)
 
-
-
                     self.firebaseControllerDb.addParkingToUser(parking: parkingInfo)
 
                     self.showAlert(title: "Add Parking", msg: "Parking Added!")
@@ -166,7 +164,6 @@ class AddNewParkingViewController: UIViewController {
             print(#function, "Latitude updates recieved")
 //                print(#function,latVariable)
                 self.latitude = latVariable ?? 0.0
-                print(#function,self.latitude )
                 self.txtStreetAddress.text = String(self.latitude)
 
         }
@@ -179,8 +176,7 @@ class AddNewParkingViewController: UIViewController {
             .sink{(lngVariable) in
             print(#function, "Longitude updates recieved")
                 self.longitude = lngVariable ?? 0.0
-                print(#function,self.longitude )
-                self.txtCity.text = "-"+String(self.longitude)
+                self.txtCity.text = String(self.longitude)
 
         }
             .store(in: &cancellables)
@@ -234,7 +230,6 @@ class AddNewParkingViewController: UIViewController {
                 let street = placemark.thoroughfare ?? "NA"
                 print(#function,"------\(city),\(street)")
                 return "\(street),\(city)"
-//                -79.3798232 43.66981
             }else{
                 print("Error while getting location")
             }

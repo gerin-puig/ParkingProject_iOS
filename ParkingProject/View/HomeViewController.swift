@@ -46,7 +46,7 @@ class HomeViewController:  UIViewController {
         self.firebaseDb.$parkingDataList
             .receive(on: RunLoop.main)
             .sink{(listOfParking) in
-            print(#function, "Data updates recieved")
+            print(#function, "Parking data updates recieved")
                 self.parkingList.removeAll()
                 self.parkingList.append(contentsOf: listOfParking)
                 self.parkingTableView.reloadData()
@@ -82,6 +82,7 @@ extension HomeViewController : UITableViewDataSource,UITableViewDelegate{
         guard let parkingDetailsVC = storyboard?.instantiateViewController(identifier: "ParkingDetailScreen") as? ParkingDetailsViewController else{
             return
         }
+        print(#function, parkingList[indexPath.row].doc_id)
         
         parkingDetailsVC.parkingDetail = parkingList[indexPath.row]
             print(parkingList[indexPath.row])
@@ -89,7 +90,23 @@ extension HomeViewController : UITableViewDataSource,UITableViewDelegate{
         show(parkingDetailsVC, sender: (Any).self)
     }
     
-    
+  
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if ( editingStyle == UITableViewCell.EditingStyle.delete && indexPath.row < self.parkingList.count){
+            let parking_id = self.parkingList[indexPath.row].doc_id
+            if(parking_id == nil){
+                showAlert(title: "Error", msg: "Error occured while deleting.")
+            }else{
+                self.firebaseDb.deleteParking(parking_doc_id: parking_id!)
+                
+                //MARK : update list
+                self.parkingList.removeAll()
+                self.firebaseDb.getParkingListData(user_id: mageUserDefaults.getUserId())
+                self.recieveParkingListChanges()
+            }
+        }
+    }
+
 }
 
 
