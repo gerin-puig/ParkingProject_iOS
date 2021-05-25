@@ -44,6 +44,7 @@ class SignUpViewController: UIViewController {
             showAlert(title: "Sign Up", msg: "Please Fill Out Missing Field!")
         }
         
+        //wait a few seconds for the auth to update and create the newly created user
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0){ [self] in
             
             let newUser = User.init(user_id: fb.getUserIdFromFirebaseAuth(), email: email, password: pass)
@@ -53,4 +54,5 @@ class SignUpViewController: UIViewController {
             
         }
     }
+    
 }//class end

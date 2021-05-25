@@ -38,15 +38,14 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func btnLoginPressed(_ sender: UIButton) {
-        guard let email = txtUsername.text
-        else
-        {
-            showAlert(title: "Email Field", msg: "Email field is Empty!")
+        guard let email = txtUsername.text, let password = txtPassword.text else {
             return
         }
-        guard let password = txtPassword.text else {
-            showAlert(title: "Password Field", msg: "Password field is Empty!")
-            return }
+        
+        if email.isEmpty || password.isEmpty{
+            showAlert(title: "Login", msg: "Email/Password Field Is Empty!")
+            return
+        }
         
         signUserIn(email: email, password: password)
     }

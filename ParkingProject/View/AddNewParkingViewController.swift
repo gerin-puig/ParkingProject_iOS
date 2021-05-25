@@ -40,6 +40,8 @@ class AddNewParkingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //self.navigationController?.navigationBar.isHidden = true
 
         self.title = "MaGe"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.systemYellow, NSAttributedString.Key.font: UIFont(name: "MarkerFelt-Thin", size: 40)]
@@ -84,7 +86,8 @@ class AddNewParkingViewController: UIViewController {
     @IBAction func btnAddParkingPressed(_ sender: UIButton) {
         guard let buildingCode = txtBuildingCode.text, let plateNum = txtPlateNumber.text, let numOfHours = txtNumberOfHours.text, let address = txtStreetAddress.text, let country = txtCountry.text, let city = txtCity.text, let suit_no = txtSuitNumberOfHost.text  else { return }
         
-        guard buildingCode.count >= 5/*, plateNum.count >= 2, suit_no.count >= 2*/ else {
+        //checks if user has entered enough characters
+        guard buildingCode.count >= 5 else {
             showAlert(title: "Add Parking", msg:"Building Code Must Be 5 Characters Long!")
             return
         }
@@ -97,6 +100,7 @@ class AddNewParkingViewController: UIViewController {
             return
         }
         
+        //gets date
         let today = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm E, d MMM y"
@@ -105,6 +109,8 @@ class AddNewParkingViewController: UIViewController {
         
         switch segLocationOption.selectedSegmentIndex {
             case 0:
+                //if user chooses manual
+                //enters street info
                 let postalAddress = "\(country), \(city), \(address)"
 
                 self.getLocation(address: postalAddress){
@@ -119,7 +125,8 @@ class AddNewParkingViewController: UIViewController {
                 }
 
             case 1:
-
+                //if user chooses automatic
+                
                 guard let latAsString = txtStreetAddress.text, let lat = Double(latAsString) else {
                     return
                 }
@@ -205,7 +212,6 @@ class AddNewParkingViewController: UIViewController {
     }
     
     //Reverse Geo Location
-   
     private func getReverseAddress(location : CLLocation, completionBlock: @escaping (_ address: (String) ) -> Void) {
         geocoder.reverseGeocodeLocation(location, completionHandler: {
             placemark, error in
