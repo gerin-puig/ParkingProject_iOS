@@ -56,6 +56,13 @@ class SignUpViewController: UIViewController {
                     }
                     
                     ss.showAlert(title: "Sign Up", msg: "Account Created!")
+                    
+                    ss.txtEmail.text = ""
+                    ss.txtPassword.text = ""
+                    ss.txtFirstName.text = ""
+                    ss.txtLastName.text = ""
+                    ss.txtPNum.text = ""
+                    ss.txtPlateNum.text = ""
                 }
                 else{
                     ss.showAlert(title: "Sign Up", msg: "Email Invalid!")
