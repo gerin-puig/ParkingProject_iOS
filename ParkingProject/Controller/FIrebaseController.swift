@@ -155,12 +155,13 @@ class FirebaseController : ObservableObject{
     
     //parking car functions
     func getParkingListData(user_id : String){
-        firebaseDb.collectionGroup("parking").order(by: "date").whereField("user_id", isEqualTo: user_id).getDocuments { queryResult, error in
+        firebaseDb.collectionGroup("parking").order(by: "date", descending: true).whereField("user_id", isEqualTo: user_id).getDocuments { queryResult, error in
             if let err = error{
                 print(#function, "Error Occured \(err)")
             }else{
                 if queryResult!.documents.count == 0{
                     print(#function, "No results found")
+                    self.parkingDataList = []
                 }else{
                     self.parkingDataList.removeAll()
                     for result in queryResult!.documents{
