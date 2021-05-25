@@ -39,23 +39,43 @@ class SignUpViewController: UIViewController {
         
         if !email.isEmpty && !pass.isEmpty && !firstname.isEmpty && !lastname.isEmpty && !phone.isEmpty && !plate.isEmpty
         {
-            FirebaseController().signUpUser(email: email, pass: pass)
-            showAlert(title: "Sign Up", msg: "Account Created!")
- 
+
+            
+            FirebaseController().signUpUser(email: email, pass: pass){
+                [weak self] success in
+                guard let ss = self else {return}
+                if success{
+                    
+                    //wait a few seconds for the auth to update and create the newly created user
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0){ [self] in
+                        
+                        let newUser = User.init(user_id: ss.fb.getUserIdFromFirebaseAuth(), email: email, password: pass)
+                        let newProfile = Profile(user_id: ss.fb.getUserIdFromFirebaseAuth(), first_name: firstname, last_name: lastname, email_id: email, phone_number: phone, plate_number: plate)
+                        
+                        ss.fb.createProfile(user: newUser, profile: newProfile)
+                        
+                    }
+                    
+                    ss.showAlert(title: "Sign Up", msg: "Account Created!")
+                    
+                    ss.txtEmail.text = ""
+                    ss.txtPassword.text = ""
+                    ss.txtFirstName.text = ""
+                    ss.txtLastName.text = ""
+                    ss.txtPNum.text = ""
+                    ss.txtPlateNum.text = ""
+                }
+                else{
+                    ss.showAlert(title: "Sign Up", msg: "Email Invalid!")
+                }
+            }
+            
         }
         else{
             showAlert(title: "Sign Up", msg: "Please Fill Out Missing Field!")
         }
         
-        //wait a few seconds for the auth to update and create the newly created user
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0){ [self] in
-            
-            let newUser = User.init(user_id: fb.getUserIdFromFirebaseAuth(), email: email, password: pass)
-            let newProfile = Profile(user_id: fb.getUserIdFromFirebaseAuth(), first_name: firstname, last_name: lastname, email_id: email, phone_number: phone, plate_number: plate)
-            
-            fb.createProfile(user: newUser, profile: newProfile)
-            
-        }
+        
     }
     
 }//class end

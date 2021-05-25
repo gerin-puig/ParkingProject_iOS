@@ -57,11 +57,36 @@ class FirebaseController : ObservableObject{
         })
     }
     
-    func signUpUser(email:String,pass:String){
+
+    //user profile functions
+    func signUpUser(email:String,pass:String, completionBlock: @escaping(_ success:Bool) -> Void){
+        
+
         Auth.auth().createUser(withEmail: email, password: pass, completion: {result, error in
-            guard error == nil else{
+
+            if let err = error{
+                let er = err as NSError
+                switch er.code {
+                    case AuthErrorCode.emailAlreadyInUse.rawValue:
+                        completionBlock(false)
+                        break
+                    case AuthErrorCode.invalidEmail.rawValue:
+                        completionBlock(false)
+                        break
+                    default:
+                        return
+                }
                 return
             }
+
+            if let user = result?.user{
+                print(user)
+                completionBlock(true)
+            }
+            else{
+                completionBlock(false)
+            }
+
         })
         
     }
