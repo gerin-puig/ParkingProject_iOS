@@ -5,7 +5,7 @@
 //  Created by Gerin Puig on 2021-05-20.
 //
 // Gerin Puig - 101343659
-// Mayank Arya -
+// Mayank Arya - 101300566
 
 import Foundation
 import MapKit
