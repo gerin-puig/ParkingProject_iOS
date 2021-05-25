@@ -4,6 +4,9 @@
 //
 //  Created by Gerin Puig on 2021-05-23.
 //
+//
+// Gerin Puig - 101343659
+// Mayank Arya - 
 
 import UIKit
 

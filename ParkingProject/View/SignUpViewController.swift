@@ -4,6 +4,8 @@
 //
 //  Created by Gerin Puig on 2021-05-16.
 //
+// Gerin Puig - 101343659
+// Mayank Arya - 
 
 import UIKit
 import FirebaseFirestore

@@ -4,6 +4,8 @@
 //
 //  Created by Mayank Arya on 2021-05-14.
 //
+// Gerin Puig - 101343659
+// Mayank Arya - 
 
 import UIKit
 import FirebaseFirestore
@@ -12,11 +14,13 @@ import Combine
 class ProfileViewController: UIViewController {
 
     var profileData : Profile?
+    
     @IBOutlet weak var firstNameLabel: UILabel!
     @IBOutlet weak var lastNameLabel: UILabel!
-    @IBOutlet weak var phoneNumberLabel: UILabel!
-    @IBOutlet weak var plateLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var plateLabel: UILabel!
+    @IBOutlet weak var phoneNumberLabel: UILabel!
+    
     private let mageUserDefaults = MaGeUserDefaults()
     
     private var cancellables : Set<AnyCancellable> = []

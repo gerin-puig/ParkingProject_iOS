@@ -4,6 +4,8 @@
 //
 //  Created by Gerin Puig on 2021-05-19.
 //
+// Gerin Puig - 101343659
+// Mayank Arya - 
 
 import UIKit
 import CoreLocation
@@ -83,6 +85,7 @@ class AddNewParkingViewController: UIViewController {
     }
     
     @IBAction func btnAddParkingPressed(_ sender: UIButton) {
+        
         guard let buildingCode = txtBuildingCode.text, let plateNum = txtPlateNumber.text, let numOfHours = txtNumberOfHours.text, let address = txtStreetAddress.text, let country = txtCountry.text, let city = txtCity.text, let suit_no = txtSuitNumberOfHost.text  else { return }
         
         //checks if user has entered enough characters
@@ -104,6 +107,8 @@ class AddNewParkingViewController: UIViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm E, d MMM y"
         let date = formatter.string(from: today)
+        
+        
         
         
         switch segLocationOption.selectedSegmentIndex {
