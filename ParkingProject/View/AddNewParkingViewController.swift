@@ -239,7 +239,7 @@ class AddNewParkingViewController: UIViewController {
     return ("NA")
    }
     
-    func getDeviceLocationAlertBox(){
+   private func getDeviceLocationAlertBox(){
         let alert = UIAlertController(title: "Do you want to get device location?", message: "", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(
                     title: "Enter location manually",
