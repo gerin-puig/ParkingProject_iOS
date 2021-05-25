@@ -41,7 +41,6 @@ class AddNewParkingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "MaGe"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.systemYellow, NSAttributedString.Key.font: UIFont(name: "MarkerFelt-Thin", size: 40)]
         
         self.navigationController?.navigationBar.titleTextAttributes = textAttributes

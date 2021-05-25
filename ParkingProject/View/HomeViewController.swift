@@ -23,11 +23,11 @@ class HomeViewController:  UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = false
 
-        self.title = "MaGe"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.systemYellow, NSAttributedString.Key.font: UIFont(name: "MarkerFelt-Thin", size: 40)]
         
         self.navigationController?.navigationBar.titleTextAttributes = textAttributes as [NSAttributedString.Key : Any]
         
+        self.tabBarController?.tabBarItem.title = "Home"
         //MARK : Parking table source
         self.parkingTableView.delegate = self
         self.parkingTableView.dataSource = self
