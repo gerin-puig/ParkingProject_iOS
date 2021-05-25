@@ -77,6 +77,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wty-kb-VP1">
+                                <rect key="frame" x="57" y="694" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="gbT-KF-jnF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="22"/>
+                                <state key="normal" title="Edit Profile" backgroundImage="button_icon (1)">
+                                    <color key="titleColor" red="0.37030574679374695" green="0.09051213413476944" blue="0.5754886269569397" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onEditButtonPressed:" destination="hnQ-Lb-ESB" eventType="touchUpInside" id="bOO-eD-gXt"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16B-9w-umi">
                                 <rect key="frame" x="20" y="152" width="374" height="28.5"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
@@ -137,17 +150,18 @@
                                 <color key="textColor" red="0.3703057468" green="0.090512134130000005" blue="0.57548862700000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wty-kb-VP1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1L-fD-eo2">
                                 <rect key="frame" x="57" y="751" width="300" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="gbT-KF-jnF"/>
+                                    <constraint firstAttribute="height" constant="40" id="a5P-vo-owU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="22"/>
-                                <state key="normal" title="Edit Profile" backgroundImage="button_icon (1)">
+                                <state key="normal" title="Delete Account ?" backgroundImage="button_icon (1)">
                                     <color key="titleColor" red="0.37030574679374695" green="0.09051213413476944" blue="0.5754886269569397" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="onEditButtonPressed:" destination="hnQ-Lb-ESB" eventType="touchUpInside" id="bOO-eD-gXt"/>
+                                    <action selector="OnProfileDeleteButtonPressed:" destination="hnQ-Lb-ESB" eventType="touchUpInside" id="eD5-QL-2N0"/>
+                                    <action selector="onEditButtonPressed:" destination="hnQ-Lb-ESB" eventType="touchUpInside" id="dPp-ur-III"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -159,7 +173,10 @@
                             <constraint firstItem="dDM-fT-ZYq" firstAttribute="trailing" secondItem="WnJ-Ll-Iez" secondAttribute="trailing" constant="20" id="5Bm-Fu-bbV"/>
                             <constraint firstItem="dDM-fT-ZYq" firstAttribute="trailing" secondItem="H3z-K8-iK1" secondAttribute="trailing" constant="20" id="6Hb-f1-x3T"/>
                             <constraint firstItem="WnJ-Ll-Iez" firstAttribute="leading" secondItem="dDM-fT-ZYq" secondAttribute="leading" constant="20" id="7aa-qp-LWz"/>
+                            <constraint firstItem="dDM-fT-ZYq" firstAttribute="trailing" secondItem="V1L-fD-eo2" secondAttribute="trailing" constant="57" id="AGu-QI-JmA"/>
+                            <constraint firstItem="dDM-fT-ZYq" firstAttribute="bottom" secondItem="V1L-fD-eo2" secondAttribute="bottom" constant="22" id="BcD-qm-qdR"/>
                             <constraint firstItem="Wty-kb-VP1" firstAttribute="leading" secondItem="dDM-fT-ZYq" secondAttribute="leading" constant="57" id="FrY-GP-aeN"/>
+                            <constraint firstItem="V1L-fD-eo2" firstAttribute="top" secondItem="Wty-kb-VP1" secondAttribute="bottom" constant="17" id="Gbs-tq-g5A"/>
                             <constraint firstItem="M2b-Nh-q8I" firstAttribute="top" secondItem="j7A-ay-bcJ" secondAttribute="bottom" constant="20" id="HIF-rP-xFf"/>
                             <constraint firstItem="dDM-fT-ZYq" firstAttribute="trailing" secondItem="9yd-1I-sBB" secondAttribute="trailing" constant="20" id="HN1-6L-VfI"/>
                             <constraint firstItem="dDM-fT-ZYq" firstAttribute="trailing" secondItem="a2A-Uh-WS4" secondAttribute="trailing" constant="20" id="JkH-Dw-zrN"/>
@@ -168,7 +185,6 @@
                             <constraint firstItem="a2A-Uh-WS4" firstAttribute="leading" secondItem="dDM-fT-ZYq" secondAttribute="leading" constant="20" id="R1l-Uh-JO7"/>
                             <constraint firstItem="a1y-G1-XfF" firstAttribute="top" secondItem="mko-Vl-iTp" secondAttribute="bottom" constant="10" id="RAA-HV-ihQ"/>
                             <constraint firstItem="9yd-1I-sBB" firstAttribute="top" secondItem="a1y-G1-XfF" secondAttribute="bottom" constant="20" id="S4V-UY-cgO"/>
-                            <constraint firstItem="dDM-fT-ZYq" firstAttribute="bottom" secondItem="Wty-kb-VP1" secondAttribute="bottom" constant="22" id="T4W-NH-Icq"/>
                             <constraint firstItem="aXJ-36-n3r" firstAttribute="leading" secondItem="dDM-fT-ZYq" secondAttribute="leading" constant="20" id="XCh-Zb-NNd"/>
                             <constraint firstItem="mko-Vl-iTp" firstAttribute="leading" secondItem="dDM-fT-ZYq" secondAttribute="leading" constant="20" id="XhU-Wf-PQ6"/>
                             <constraint firstItem="dDM-fT-ZYq" firstAttribute="trailing" secondItem="j7A-ay-bcJ" secondAttribute="trailing" constant="20" id="ZlD-6y-Xpz"/>
@@ -181,6 +197,7 @@
                             <constraint firstItem="16B-9w-umi" firstAttribute="top" secondItem="WnJ-Ll-Iez" secondAttribute="bottom" constant="10" id="hZz-of-Lo5"/>
                             <constraint firstItem="j7A-ay-bcJ" firstAttribute="top" secondItem="aXJ-36-n3r" secondAttribute="bottom" constant="10" id="pUb-oq-eKB"/>
                             <constraint firstItem="dDM-fT-ZYq" firstAttribute="trailing" secondItem="aXJ-36-n3r" secondAttribute="trailing" constant="20" id="s1W-6X-LnE"/>
+                            <constraint firstItem="V1L-fD-eo2" firstAttribute="leading" secondItem="dDM-fT-ZYq" secondAttribute="leading" constant="57" id="s1q-7s-QXF"/>
                             <constraint firstItem="a1y-G1-XfF" firstAttribute="leading" secondItem="dDM-fT-ZYq" secondAttribute="leading" constant="20" id="sBF-N4-czk"/>
                             <constraint firstItem="H3z-K8-iK1" firstAttribute="leading" secondItem="dDM-fT-ZYq" secondAttribute="leading" constant="20" id="sIX-if-6i2"/>
                             <constraint firstItem="aXJ-36-n3r" firstAttribute="top" secondItem="a2A-Uh-WS4" secondAttribute="bottom" constant="20" id="ub1-GT-MX5"/>
@@ -268,7 +285,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UL6-zu-6qm">
-                                <rect key="frame" x="57" y="794" width="300" height="40"/>
+                                <rect key="frame" x="57" y="800" width="300" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="1Oz-ug-zcH"/>
                                 </constraints>
@@ -296,7 +313,7 @@
                             <constraint firstItem="YhV-Ok-z1w" firstAttribute="leading" secondItem="7ra-cC-owQ" secondAttribute="leading" id="NzP-r7-THG"/>
                             <constraint firstItem="2je-S3-hI2" firstAttribute="top" secondItem="IvR-dd-MZg" secondAttribute="bottom" constant="10" id="PtC-GF-Bz2"/>
                             <constraint firstItem="hzd-ok-dln" firstAttribute="top" secondItem="eMK-Lp-uSp" secondAttribute="bottom" constant="10" id="TFJ-cK-UOa"/>
-                            <constraint firstItem="xb6-Gv-DW1" firstAttribute="bottom" secondItem="UL6-zu-6qm" secondAttribute="bottom" constant="28" id="THV-3q-WMj"/>
+                            <constraint firstItem="xb6-Gv-DW1" firstAttribute="bottom" secondItem="UL6-zu-6qm" secondAttribute="bottom" constant="22" id="THV-3q-WMj"/>
                             <constraint firstItem="wFq-fk-naO" firstAttribute="trailing" secondItem="IvR-dd-MZg" secondAttribute="trailing" id="WtB-yq-uhI"/>
                             <constraint firstItem="YhV-Ok-z1w" firstAttribute="top" secondItem="CFb-VP-x8n" secondAttribute="bottom" constant="10" id="Z9t-ks-Wl8"/>
                             <constraint firstItem="wFq-fk-naO" firstAttribute="top" secondItem="7ra-cC-owQ" secondAttribute="bottom" constant="10" id="bPT-l5-8my"/>
@@ -585,7 +602,6 @@
                             <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="IJT-Cv-TwL" secondAttribute="trailing" constant="20" id="YUt-GE-FQM"/>
                             <constraint firstItem="7wa-ef-azX" firstAttribute="top" secondItem="FAC-5r-3ga" secondAttribute="bottom" constant="5" id="bGD-SQ-xNI"/>
                             <constraint firstItem="TLN-rh-kna" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="57" id="dI4-gu-adh"/>
-                            <constraint firstItem="TLN-rh-kna" firstAttribute="top" secondItem="iP9-hs-mYX" secondAttribute="bottom" constant="91" id="dkd-Je-zht"/>
                             <constraint firstItem="MJq-7W-7p0" firstAttribute="trailing" secondItem="R5q-05-rcn" secondAttribute="trailing" constant="20" id="fPs-Fg-l6Q"/>
                             <constraint firstItem="FAC-5r-3ga" firstAttribute="top" secondItem="reP-R0-TZR" secondAttribute="bottom" constant="5" id="hcB-9H-2bC"/>
                             <constraint firstItem="iWe-8Q-uIe" firstAttribute="leading" secondItem="MJq-7W-7p0" secondAttribute="leading" constant="20" id="i2G-Ss-705"/>
@@ -908,11 +924,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P40-7F-mGB">
-                                <rect key="frame" x="57" y="671" width="300" height="40"/>
+                                <rect key="frame" x="57" y="666.5" width="300" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="gUr-Pr-pVb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="22"/>
                                 <state key="normal" title="Login" backgroundImage="button_icon (1)">
                                     <color key="titleColor" red="0.37030574679374695" green="0.09051213413476944" blue="0.5754886269569397" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -925,7 +941,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="qGb-6w-gBL"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="22"/>
                                 <state key="normal" title="Sign Up" backgroundImage="button_icon (1)">
                                     <color key="titleColor" red="0.37030574679374695" green="0.09051213413476944" blue="0.5754886269569397" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -935,8 +951,8 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0d-s4-j8Q">
-                                <rect key="frame" x="100" y="719" width="214" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="100" y="714.5" width="214" height="25.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
                                 <color key="textColor" red="0.37030574679374695" green="0.09051213413476944" blue="0.5754886269569397" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1084,7 +1100,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="EjG-WR-pmN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="22"/>
                                 <state key="normal" title="Sign Up" backgroundImage="button_icon (1)">
                                     <color key="titleColor" red="0.37030574679374695" green="0.09051213413476944" blue="0.5754886269569397" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>

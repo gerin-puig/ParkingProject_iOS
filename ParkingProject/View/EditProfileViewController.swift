@@ -55,7 +55,7 @@ class EditProfileViewController: UIViewController {
     
     @objc func backAction(){
         print("back clicked")
-        self.navigationController?.popViewController(animated: true)
+        self.navigationController?.popViewController(animated: false)
     }
 
     @IBAction func saveProfileButton(_ sender: Any) {
@@ -68,7 +68,7 @@ class EditProfileViewController: UIViewController {
 
         firebaseDb.updateUserProfile(profile: self.profileData!, doc_id: (self.profileData?.doc_id)!)
         
-        navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: false)
         self.dismiss(animated: true, completion: nil)
    
     }

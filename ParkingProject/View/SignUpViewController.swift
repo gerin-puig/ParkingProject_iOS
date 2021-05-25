@@ -41,6 +41,7 @@ class SignUpViewController: UIViewController {
         {
             FirebaseController().signUpUser(email: email, pass: pass)
             showAlert(title: "Sign Up", msg: "Account Created!")
+ 
         }
         else{
             showAlert(title: "Sign Up", msg: "Please Fill Out Missing Field!")

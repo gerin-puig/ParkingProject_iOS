@@ -20,6 +20,8 @@ class FirebaseController : ObservableObject{
     @Published var parkingDataList : [Parking] = []
     var list : [Parking] = []
     private static var sharedInstance : FirebaseController?
+    var profileDocId : String?
+    var userDocId : String?
     
     static func getInstance() -> FirebaseController{
         if sharedInstance != nil{
@@ -39,17 +41,7 @@ class FirebaseController : ObservableObject{
         
         return self.userId!
     }
-    
-//     func signInUser(email:String, password:String, isRememberMe:Bool, myView:UIViewController) {
-        
-//         Auth.auth().signIn(withEmail: email, password: password, completion: {[weak self] result, error in
-//             guard let strongSelf = self else { return }
-            
-//             print(#function, result)
-//             guard error == nil else{
-//                 myView.showAlert(title: "Invalid", msg: "Account Not Found!")
-//                 return
-    
+
     
     func signInUser(email:String, password:String, completionBlock: @escaping (_ success:Bool) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password, completion: {[weak self] result, error in
@@ -65,7 +57,6 @@ class FirebaseController : ObservableObject{
         })
     }
     
-    //user profile functions
     func signUpUser(email:String,pass:String){
         Auth.auth().createUser(withEmail: email, password: pass, completion: {result, error in
             guard error == nil else{
@@ -74,12 +65,14 @@ class FirebaseController : ObservableObject{
         })
         
     }
+
+    
+    //user profile functions
     
     func createProfile(user:User,profile:Profile){
         do{
             try firebaseDb.collection("user").addDocument(from: user)
             try firebaseDb.collection("profile").addDocument(from: profile)
-            
         }catch{
             print(error)
         }
@@ -96,6 +89,7 @@ class FirebaseController : ObservableObject{
                     for result in queryResult!.documents{
                         do{
                             self.profileData = try result.data(as : Profile.self)
+                            self.profileDocId = self.profileData?.doc_id
                         }catch{
                             print(#function,"Error while reading data :  \(error)")
                         }
@@ -105,39 +99,38 @@ class FirebaseController : ObservableObject{
         }
     }
     
-//    func saveUserProfile(profile : Profile){
-//        do{
-//            try firebaseDb.collection("profile").addDocument(from: profile)
-//        }
-//        catch{
-//            print(#function,error)
-//        }
-//    }
     
     func updateUserProfile(profile : Profile, doc_id : String){
         do {
             try firebaseDb.collection("profile").document(doc_id).setData(from: profile)
-            print(#function,"Task updated")
+            print(#function,"Task Updated.")
                 
         } catch {
             print(error)
         }
     }
     
-    func addParkingToUser(parking:Parking){
+    func deleteUserProfile(){
         do {
-            
-            try firebaseDb.collection("parking").addDocument(from: parking)
-            print(#function,"Parking added")
+
+            let user = Auth.auth().currentUser
+
+            user?.delete { error in
+              if let error = error {
+                print(#function,"Error occured while deleting user from firebase A \(error)")
+              } else {
+                print(#function,"Account deleted successfully")
+              }
+            }
         } catch {
-            print(error)
+            print(#function,error)
         }
     }
     
     
     //parking car functions
     func getParkingListData(user_id : String){
-        firebaseDb.collectionGroup("parking").whereField("user_id", isEqualTo: user_id).order(by: "date").getDocuments { queryResult, error in
+        firebaseDb.collectionGroup("parking").order(by: "date").whereField("user_id", isEqualTo: user_id).getDocuments { queryResult, error in
             if let err = error{
                 print(#function, "Error Occured \(err)")
             }else{
@@ -158,4 +151,17 @@ class FirebaseController : ObservableObject{
         }
     }
     
+    func addParkingToUser(parking:Parking){
+        do {
+            try firebaseDb.collection("parking").addDocument(from: parking)
+            print(#function,"Parking added")
+        } catch {
+            print(error)
+        }
+    }
+
+    
+    func deleteParking(parking_doc_id : String){
+        try firebaseDb.collection("parking").document(parking_doc_id).delete()
+    }
 }
