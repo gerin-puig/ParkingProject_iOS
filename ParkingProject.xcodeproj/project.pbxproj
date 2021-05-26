@@ -58,7 +58,6 @@
 		EB01DE10264B900C00232BE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB01DE3E26520FE000232BE0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		EB01DE6E2653701700232BE0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		EB01DE70265376C400232BE0 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		EB01DE7526558F6500232BE0 /* AddNewParkingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewParkingViewController.swift; sourceTree = "<group>"; };
 		EB01DE792656285700232BE0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		EB2E75D7265A3044003D063C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -98,7 +97,6 @@
 			children = (
 				382DB0C2264EADFE00FF5EF9 /* ParkingDetailModel.swift */,
 				EB01DE6E2653701700232BE0 /* User.swift */,
-				EB01DE70265376C400232BE0 /* Profile.swift */,
 				382DB0D0265165DC00FF5EF9 /* ProfileModel.swift */,
 				382DB0D22652ABDC00FF5EF9 /* ParkingModel.swift */,
 			);

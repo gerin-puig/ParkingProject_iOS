@@ -115,6 +115,7 @@ class ProfileViewController: UIViewController {
         let alert = UIAlertController(title: "Please confirm account deletion by adding your password!", message: "", preferredStyle: UIAlertController.Style.alert)
         
         alert.addTextField { textField in
+            textField.isSecureTextEntry = true
             textField.placeholder = "Enter password"
         }
         alert.addAction(UIAlertAction(
