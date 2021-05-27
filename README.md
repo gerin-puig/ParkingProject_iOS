@@ -62,11 +62,9 @@ Add New Parking
 
 
 
-Work Division Sheet
-[MaGe Parking App (export).xls](https://github.com/gerin-puig/ParkingProject/files/6503329/MaGe.Parking.App.export.xls)
-
 <img width="1127" alt="Screen Shot 2021-05-18 at 6 53 07 PM" src="https://user-images.githubusercontent.com/78885735/118733503-65adba00-b80a-11eb-9a95-65ef732a7f01.png">
 <img width="940" alt="Screen Shot 2021-05-18 at 6 52 52 PM" src="https://user-images.githubusercontent.com/78885735/118733516-6a726e00-b80a-11eb-9bba-eaadc8bb8d8f.png">
 <img width="960" alt="Screen Shot 2021-05-18 at 6 52 45 PM" src="https://user-images.githubusercontent.com/78885735/118733577-84ac4c00-b80a-11eb-85a3-7414b2887809.png">
 
+[MaGe-TaskList-Division.pdf](https://github.com/gerin-puig/ParkingProject/files/6555040/MaGe-TaskList-Division.pdf)
 
